@@ -21,7 +21,7 @@ Laya needs PyTorch, which lags new Python releases, so the project pins Python
 3.12 (`.python-version`). uv fetches it if you don't have it.
 
 ```bash
-uv sync --extra dev                  # simulated adapters only, no model downloads
+uv sync --extra dev --extra trace    # simulated adapters only, no model downloads
 uv run pytest
 uv run doctype demo                  # whole flow, offline
 ```
@@ -29,7 +29,7 @@ uv run doctype demo                  # whole flow, offline
 ### Real Laya
 
 ```bash
-uv sync --extra dev --extra laya
+uv sync --extra dev --extra trace --extra laya
 uv run doctype probe "Schedule of values 22 locations TIV 140m"   # raw SDK output, first download
 uv run doctype --model laya classify "Loss run 5 years incurred 2.1m"
 uv run doctype --model laya eval
@@ -64,7 +64,7 @@ ollama pull qwen3.8:27b-mlx
 uv run doctype --fallback ollama demo
 
 # Bedrock, the production path (Converse API, any text model)
-uv sync --extra dev --extra bedrock
+uv sync --extra dev --extra trace --extra bedrock
 export AWS_PROFILE=...   # credentials with bedrock:InvokeModel
 uv run doctype --fallback bedrock demo
 ```
@@ -84,7 +84,15 @@ Global flags: `--model simulated|laya`, `--fallback simulated|ollama|bedrock`,
 `--trainer simulated|export|laya`, `--threshold`.
 
 Each demo run writes `decisions.jsonl`, `labels.jsonl`, the snapshot
-`manifest.json` and `eval.json` under `var/runs/<timestamp>/`.
+`manifest.json`, `eval.json` and `trace.json` under `var/runs/<timestamp>/`.
+
+`trace.json` is the run as an OpenTelemetry trace: a tree of timed steps (`demo` > `week` >
+`intake.document` > `model.predict`, `gate`, `review.queue`, `fallback.classify`, `extract`, then
+`ops.review`, `calibration` and `training.run` with its snapshot, eval, fine-tune and promotion steps).
+Each step records what was invoked (model version, fallback actor, trainer), what it returned and what
+was decided, plus its duration. Failed steps carry `"status": "ERROR"` and the exception. Document
+text is never recorded; documents are identified by id, hash and template group. `doctype eval` writes
+a trace too. Set `DOCTYPE_TRACE=off` to turn tracing off, or run without the `trace` extra.
 
 ## Layout
 
@@ -105,6 +113,7 @@ src/doctype/
     simulated.py       offline stand-ins for Laya, the trainer and the LLM
     extractors.py      schema-checked regex extractors
     storage.py         in-memory and JSONL/file stores
+    tracing.py         OpenTelemetry tracer writing trace.json, and a no-op tracer
   container.py         composition root
   cli.py
 data/

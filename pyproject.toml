@@ -10,6 +10,9 @@ dependencies = []
 laya = ["laya>=0.4.15"]
 bedrock = ["boto3>=1.43"]
 dev = ["pytest>=9"]
+trace = [
+    "opentelemetry-sdk>=1.45.1",
+]
 
 [project.scripts]
 doctype = "doctype.cli:main"

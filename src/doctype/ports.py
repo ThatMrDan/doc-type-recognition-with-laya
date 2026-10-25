@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from contextlib import AbstractContextManager
 from typing import Protocol
 
 from .domain import Decision, Document, EvalReport, ExtractionResult, GoldenExample, Label, Snapshot
@@ -67,3 +68,15 @@ class ModelRegistry(Protocol):
 class ReviewQueue(Protocol):
     def push(self, decision: Decision, reason: str) -> None: ...
     def drain(self) -> list[tuple[Decision, str]]: ...
+
+
+class Span(Protocol):
+    """One step in a trace. Attribute values are str, bool, int, float, or a dict of those."""
+    def set(self, **attributes: object) -> None: ...
+    def event(self, name: str, **attributes: object) -> None: ...
+
+
+class Tracer(Protocol):
+    """Nested, timed steps for one run. Spans opened inside another span become its children."""
+    def span(self, name: str, **attributes: object) -> AbstractContextManager[Span]: ...
+    def close(self) -> str | None: ...

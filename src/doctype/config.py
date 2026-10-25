@@ -36,6 +36,7 @@ class Settings:
     data_dir: str = "./data"
     var_dir: str = "./var"
     tenant: str = "fcci"
+    trace: str = "otel"                  # otel | off
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -60,4 +61,5 @@ class Settings:
             data_dir=e("DOCTYPE_DATA_DIR", cls.data_dir),
             var_dir=e("DOCTYPE_VAR_DIR", cls.var_dir),
             tenant=e("DOCTYPE_TENANT", cls.tenant),
+            trace=e("DOCTYPE_TRACE", cls.trace),
         )

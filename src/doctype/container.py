@@ -13,7 +13,8 @@ from .adapters.storage import (
     JsonlDecisionLog, JsonlLabelRepository, StaticGoldenSet,
 )
 from .config import Settings
-from .ports import DecisionModel, FallbackClassifier, Trainer
+from .adapters.tracing import NullTracer
+from .ports import DecisionModel, FallbackClassifier, Trainer, Tracer
 from .services import (
     EvalService, ExtractionRouter, IntakeService, LabelStoreService, PromotionPolicy, TrainingPipeline,
 )
@@ -53,6 +54,18 @@ def build_trainer(s: Settings) -> Trainer:
     raise ValueError(f"unknown trainer {s.trainer!r}")
 
 
+def build_tracer(s: Settings, run_dir: Path) -> Tracer:
+    if s.trace == "otel":
+        try:
+            from .adapters.tracing import OtelTracer
+            return OtelTracer(run_dir / "trace.json")
+        except ImportError as e:
+            raise RuntimeError("tracing needs the trace extra: uv sync --extra trace, or set DOCTYPE_TRACE=off") from e
+    if s.trace == "off":
+        return NullTracer()
+    raise ValueError(f"unknown trace {s.trace!r}")
+
+
 @dataclass
 class App:
     settings: Settings
@@ -65,9 +78,11 @@ class App:
     intake: IntakeService
     evals: EvalService
     pipeline: TrainingPipeline
+    tracer: Tracer
 
 
 def build_app(s: Settings, run_dir: Path, seed: int = 7) -> App:
+    tracer = build_tracer(s, run_dir)
     golden = StaticGoldenSet.from_jsonl(Path(s.data_dir) / "golden" / "golden-v1.jsonl")
     texts = InMemoryTextStore()
     snapshots = FileSnapshotStore(run_dir)
@@ -77,7 +92,7 @@ def build_app(s: Settings, run_dir: Path, seed: int = 7) -> App:
                               JsonlLabelRepository(run_dir / "labels.jsonl"),
                               golden, snapshots, audit_rate=s.audit_rate, rng=random.Random(seed))
     intake = IntakeService(models, build_fallback(s), ExtractionRouter(default_extractors()),
-                           texts, store, review, s.threshold)
+                           texts, store, review, s.threshold, tracer)
     evals = EvalService(golden)
-    pipeline = TrainingPipeline(store, snapshots, texts, build_trainer(s), models, evals, PromotionPolicy())
-    return App(s, run_dir, golden, texts, models, review, store, intake, evals, pipeline)
+    pipeline = TrainingPipeline(store, snapshots, texts, build_trainer(s), models, evals, PromotionPolicy(), tracer)
+    return App(s, run_dir, golden, texts, models, review, store, intake, evals, pipeline, tracer)

@@ -36,18 +36,25 @@ def _load_batch(path: Path) -> list[dict]:
 def _run_week(app: App, name: str, rows: list[dict], truth: dict[str, str]) -> None:
     model = app.models.current()
     print(f"\n== {name}: {model.version}, threshold {app.intake.threshold:.2f}")
-    auto = 0
-    for i, row in enumerate(rows):
-        doc = Document(f"{name}-{i}", app.settings.tenant, row["text"], row["template_group"])
-        out = app.intake.process(doc)
-        truth[out.decision.decision_id] = row["truth"]
-        auto += out.decision.route == "auto"
-        print(f"  {row['text'][:46]:<46}  {out.path}")
-    print(f"  auto-routed {auto}/{len(rows)}")
-    items = app.review.drain()
-    for d, reason in items:   # simulated ops reviewer, using the ground truth in the sample file
-        app.store.add_label(d.decision_id, truth[d.decision_id], LabelSource.HUMAN, "ops:reviewer", reason)
-    print(f"  ops reviewed {len(items)}: {dict(Counter(r for _, r in items))}")
+    with app.tracer.span("week", week=name, model_version=model.version, threshold=app.intake.threshold,
+                         documents=len(rows)) as span:
+        auto = 0
+        for i, row in enumerate(rows):
+            doc = Document(f"{name}-{i}", app.settings.tenant, row["text"], row["template_group"])
+            out = app.intake.process(doc)
+            truth[out.decision.decision_id] = row["truth"]
+            auto += out.decision.route == "auto"
+            print(f"  {row['text'][:46]:<46}  {out.path}")
+        print(f"  auto-routed {auto}/{len(rows)}")
+        span.set(auto_routed=auto)
+        with app.tracer.span("ops.review", actor="ops:reviewer") as review:
+            items = app.review.drain()
+            for d, reason in items:   # simulated ops reviewer, using the ground truth in the sample file
+                app.store.add_label(d.decision_id, truth[d.decision_id], LabelSource.HUMAN, "ops:reviewer", reason)
+                review.event("label", decision_id=d.decision_id, reason=reason, source=LabelSource.HUMAN.name,
+                             doc_type=truth[d.decision_id])
+            review.set(items=len(items))
+        print(f"  ops reviewed {len(items)}: {dict(Counter(r for _, r in items))}")
 
 
 def cmd_demo(s: Settings) -> None:
@@ -56,19 +63,32 @@ def cmd_demo(s: Settings) -> None:
     data = Path(s.data_dir) / "production"
     truth: dict[str, str] = {}
     print(f"model={s.model} fallback={s.fallback} trainer={s.trainer} run={run_dir}")
+    try:
+        with app.tracer.span("demo", model=s.model, fallback=s.fallback, trainer=s.trainer, tenant=s.tenant,
+                             run_dir=str(run_dir)):
+            _demo_steps(app, s, run_dir, data, truth)
+    finally:
+        if trace := app.tracer.close():
+            print(f"trace {trace}")
 
+
+def _demo_steps(app: App, s: Settings, run_dir: Path, data: Path, truth: dict[str, str]) -> None:
     _run_week(app, "week1", _load_batch(data / "week1.jsonl"), truth)
 
-    audited = app.store.human_labelled(s.tenant, audited_only=True)
-    print(f"\n== calibration: {len(audited)} audited decisions")
-    if len(audited) >= MIN_AUDIT_SAMPLE:
-        t = fit_temperature(audited)
-        tuned = tune_threshold(audited, max_auto_error=0.05)
-        print(f"  temperature={t:.2f} threshold={tuned}")
-        if tuned is not None:
-            app.intake.threshold = tuned
-    else:
-        print(f"  fewer than {MIN_AUDIT_SAMPLE}; keeping temperature 1.0 and threshold {app.intake.threshold:.2f}")
+    with app.tracer.span("calibration", min_audit_sample=MIN_AUDIT_SAMPLE) as span:
+        audited = app.store.human_labelled(s.tenant, audited_only=True)
+        span.set(audited=len(audited))
+        print(f"\n== calibration: {len(audited)} audited decisions")
+        if len(audited) >= MIN_AUDIT_SAMPLE:
+            t = fit_temperature(audited)
+            tuned = tune_threshold(audited, max_auto_error=0.05)
+            span.set(fitted=True, temperature=t, threshold=tuned)
+            print(f"  temperature={t:.2f} threshold={tuned}")
+            if tuned is not None:
+                app.intake.threshold = tuned
+        else:
+            span.set(fitted=False, threshold=app.intake.threshold)
+            print(f"  fewer than {MIN_AUDIT_SAMPLE}; keeping temperature 1.0 and threshold {app.intake.threshold:.2f}")
 
     print("\n== training run")
     result = app.pipeline.run(s.tenant, "candidate-v2", app.intake.threshold)
@@ -105,7 +125,12 @@ def cmd_eval(s: Settings, temperature: float) -> None:
     model = app.models.current()
     if temperature != 1.0:
         model = CalibratedModel(model, temperature)
-    print(_fmt(app.evals.evaluate(model, s.threshold)))
+    with app.tracer.span("eval", model_version=model.version, threshold=s.threshold) as span:
+        r = app.evals.evaluate(model, s.threshold)
+        span.set(accuracy=r.accuracy, ece=r.ece, coverage=r.coverage, recall=r.recall)
+    print(_fmt(r))
+    if trace := app.tracer.close():
+        print(f"trace {trace}")
 
 
 def cmd_probe(s: Settings, text: str) -> None:

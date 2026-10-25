@@ -8,6 +8,7 @@ from doctype.adapters.storage import (
     InMemoryDecisionLog, InMemoryLabelRepository, InMemoryModelRegistry, InMemoryReviewQueue,
     InMemorySnapshotStore, InMemoryTextStore, StaticGoldenSet,
 )
+from doctype.adapters.tracing import NullTracer
 from doctype.domain import GoldenExample
 from doctype.services import (
     EvalService, ExtractionRouter, IntakeService, LabelStoreService, PromotionPolicy, TrainingPipeline,
@@ -23,7 +24,8 @@ GOLDEN = [
 
 
 class Wired:
-    def __init__(self, audit_rate: float = 0.0, threshold: float = 0.85):
+    def __init__(self, audit_rate: float = 0.0, threshold: float = 0.85, tracer=None):
+        self.tracer = tracer or NullTracer()
         self.texts = InMemoryTextStore()
         self.golden = StaticGoldenSet("golden-test", GOLDEN)
         self.snapshots = InMemorySnapshotStore()
@@ -32,10 +34,10 @@ class Wired:
         self.store = LabelStoreService(InMemoryDecisionLog(), InMemoryLabelRepository(), self.golden,
                                        self.snapshots, audit_rate=audit_rate, rng=random.Random(1))
         self.intake = IntakeService(self.models, SimulatedFallback(), ExtractionRouter(default_extractors()),
-                                    self.texts, self.store, self.review, threshold)
+                                    self.texts, self.store, self.review, threshold, self.tracer)
         self.evals = EvalService(self.golden)
         self.pipeline = TrainingPipeline(self.store, self.snapshots, self.texts, SimulatedTrainer(),
-                                         self.models, self.evals, PromotionPolicy())
+                                         self.models, self.evals, PromotionPolicy(), self.tracer)
 
 
 @pytest.fixture

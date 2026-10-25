@@ -16,9 +16,9 @@ Document types and the descriptions Laya scores: `CRITERIA` in `src/doctype/doma
 ## Commands
 
 ```bash
-uv sync --extra dev                      # add --extra laya / --extra bedrock as needed
+uv sync --extra dev --extra trace        # add --extra laya / --extra bedrock as needed
 uv run pytest                            # must stay green
-uv run doctype demo                      # offline end-to-end run, writes var/runs/<ts>/
+uv run doctype demo                      # offline end-to-end run, writes var/runs/<ts>/ incl. trace.json
 uv run doctype --model laya probe "..."  # raw Laya answer
 uv run doctype --model laya --fallback ollama demo
 ```
@@ -33,7 +33,8 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 - `services/` label store, intake, evaluation, training pipeline, calibration
 - `adapters/` real and simulated implementations of ports
 - `container.py` the only place adapters are chosen; `cli.py` thin
-- Optional dependencies (laya, boto3) are imported lazily inside adapters so the core runs without them
+- Services trace their steps through the `Tracer` port; only `adapters/tracing.py` imports OpenTelemetry
+- Optional dependencies (laya, boto3, opentelemetry) are imported lazily inside adapters so the core runs without them
 
 ## Invariants the code enforces (do not weaken)
 
