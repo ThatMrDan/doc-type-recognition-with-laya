@@ -60,7 +60,7 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 |---|---|
 | Laya inference | Real adapter, untested against downloaded weights yet. Run `probe` first. |
 | Laya fine-tune | Real adapter against the verified API, not yet run end to end |
-| Ollama / Bedrock fallback | Real; no Ollama model pulled yet (`ollama pull qwen3:4b`) |
+| Ollama / Bedrock fallback | Real; model `qwen3.8:27b-mlx` set in `.env` |
 | Extractors | Regex stand-ins with the real accept/reject contract |
 | Ops reviewer | Simulated from `truth` in `data/production/*.jsonl` |
 | Storage | Local JSONL and file manifests; production target is per-tenant Iceberg tables and S3 manifests |
@@ -69,7 +69,7 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 ## Suggested next work
 
 1. Download Laya, run `doctype --model laya probe` and `eval`, compare against the simulated baseline.
-2. Pull `qwen3:4b`, run the demo with `--fallback ollama`, check fallback agreement with truth.
+2. Once `qwen3.8:27b-mlx` is pulled, run the demo with `--fallback ollama`, check fallback agreement with truth.
 3. Run a real fine-tune on Apple Silicon (`LAYA_DEVICE=mps`) and confirm `report["skipped"]` is empty.
 4. Grow the golden set and production samples with realistic, anonymised broker documents.
 5. Add a Step Functions / CDK sketch for the training pipeline and Iceberg adapters for the label store.

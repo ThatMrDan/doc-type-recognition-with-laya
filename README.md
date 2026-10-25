@@ -60,7 +60,7 @@ The default checkpoint is `typed-decisions` (1k context). Set `LAYA_SUBFOLDER=`
 
 ```bash
 # Local, free, offline
-ollama pull qwen3:4b
+ollama pull qwen3.8:27b-mlx
 uv run doctype --fallback ollama demo
 
 # Bedrock, the production path (Converse API, any text model)
