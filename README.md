@@ -118,7 +118,7 @@ data/
 - Labels carry a source and trust tier. Human beats downstream beats LLM. Disagreement below human sends the example to review, not training.
 - Snapshots drop golden documents by hash and by template group, so near-duplicates can't leak.
 - Promotion requires no accuracy loss, no per-class recall drop over 5 points, and no calibration regression over 0.02 ECE.
-- Temperature and threshold are fitted on the random audit sample of auto-routed decisions, never on the golden set, and only once there are at least 30 audited decisions.
+- Temperature and threshold are fitted on the random audit sample, drawn from auto-routed and fallback-routed decisions alike, never on the golden set, and only once there are at least 30 audited decisions.
 
 ## What is real and what is simulated
 

@@ -41,7 +41,7 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 2. Labels carry a source and trust tier: HUMAN > DOWNSTREAM > LLM_FALLBACK. Disagreement below HUMAN returns no label (goes to review, not training).
 3. Snapshots exclude golden documents by hash AND by template group, so near-duplicates cannot leak.
 4. The golden set is the exam: never trained on, never used to fit temperature or threshold.
-5. Temperature and threshold are fitted only on the random audit sample of auto-routed decisions, and only with at least 30 audited decisions (`MIN_AUDIT_SAMPLE` in cli.py).
+5. Temperature and threshold are fitted only on the random audit sample, drawn from every decision whatever its route (sampling auto-routed decisions alone selects on confidence and starves calibration while nothing clears the gate), and only with at least 30 audited decisions (`MIN_AUDIT_SAMPLE` in cli.py).
 6. Promotion needs no accuracy loss, no per-class recall drop over 0.05, no ECE increase over 0.02 (`PromotionPolicy`).
 
 ## Verified external APIs (checked October 2026, Context7 plus installed packages)

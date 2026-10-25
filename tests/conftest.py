@@ -41,3 +41,8 @@ class Wired:
 @pytest.fixture
 def wired():
     return Wired()
+
+
+@pytest.fixture
+def audit_everything():
+    return Wired(audit_rate=1.0)

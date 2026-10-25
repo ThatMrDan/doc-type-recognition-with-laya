@@ -28,7 +28,9 @@ class LabelStoreService:
             decision_id=str(uuid.uuid4()), tenant_id=doc.tenant_id, doc_id=doc.doc_id,
             doc_hash=doc_hash(doc.text), template_group=doc.template_group, input_uri=input_uri,
             model_version=model_version, probabilities=dict(probabilities), threshold=threshold,
-            route=route, audited=route == "auto" and self._rng.random() < self._audit_rate, created_at=now(),
+            # audit both routes: a sample of auto-routed decisions alone is selected on confidence and
+            # stays empty while the model is too timid to clear the gate
+            route=route, audited=self._rng.random() < self._audit_rate, created_at=now(),
         )
         self._decisions.append(decision)
         return decision

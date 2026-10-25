@@ -43,6 +43,15 @@ def test_threshold_and_temperature_from_audit_sample(wired):
     assert fit_temperature(decisions) > 0
 
 
+def test_fallback_routed_decisions_join_the_audit_sample(audit_everything):
+    w = audit_everything
+    out = w.intake.process(Document("1", "t1", "ACORD 125 application commercial", "acord-125"))
+    assert out.decision.route == "fallback" and out.decision.audited
+    assert (out.decision, "audit sample") in w.review.drain()
+    w.store.add_label(out.decision.decision_id, "acord", LabelSource.HUMAN, "ops:reviewer", "audit sample")
+    assert w.store.human_labelled("t1", audited_only=True) == [(out.decision, "acord")]
+
+
 def test_laya_answer_shapes():
     as_dict = _to_distribution({"choice": "sov", "probabilities": {"sov": 0.7, "loss_run": 0.3}})
     as_list = _to_distribution({"choice": "sov", "probabilities": [0.6, 0.1, 0.1, 0.1, 0.1]})

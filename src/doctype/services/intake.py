@@ -43,13 +43,13 @@ class IntakeService:
         d = self._store.record_decision(doc=doc, input_uri=uri, model_version=model.version,
                                         probabilities=probs, threshold=self.threshold)
         trace = [f"{d.predicted} {d.confidence:.2f}"]
+        if d.audited:
+            self._review.push(d, "audit sample")
+            trace.append("audit queued")
 
         if d.route == "auto":
             doc_type = d.predicted
             trace.append("auto")
-            if d.audited:
-                self._review.push(d, "audit sample")
-                trace.append("audit queued")
         else:
             doc_type = self._fallback.classify(doc.text)
             self._store.add_label(d.decision_id, doc_type, LabelSource.LLM_FALLBACK, self._fallback.actor)
