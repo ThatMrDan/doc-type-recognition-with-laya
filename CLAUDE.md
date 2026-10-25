@@ -61,21 +61,21 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 
 | Part | Status |
 |---|---|
-| Laya inference | Real adapter, untested against downloaded weights yet. Run `probe` first. |
-| Laya fine-tune | Real adapter against the verified API, not yet run end to end |
+| Laya inference | Real; run on `typed-decisions` (week 1: top-1 85%, confidence 0.25 to 0.72, so nothing clears 0.85 untuned) |
+| Laya fine-tune | Real; first run on MPS 25 Oct 2026 (`docs/experiments/2026-10-25-laya-finetune/`). Set `LAYA_BASE=typed-decisions` |
 | Ollama / Bedrock fallback | Real; model `qwen3.8:27b-mlx` set in `.env` |
 | Extractors | Regex stand-ins with the real accept/reject contract |
 | Ops reviewer | Simulated from `truth` in `data/production/*.jsonl` |
 | Storage | Local JSONL and file manifests; production target is per-tenant Iceberg tables and S3 manifests |
-| Golden set | 10 examples, illustrative only; real eval needs a few hundred per class |
+| Golden set | golden-v1: 10 examples, illustrative. golden-v2 (500 rows) half built: see `docs/golden/STATUS.md` |
 | Production samples | week1 140 rows (20 hand-written + 120 synthetic from `scripts/generate_production.py`, seeded, ~15% hard cases); week2 8 rows |
 
 ## Suggested next work
 
-1. Download Laya, run `doctype --model laya probe` and `eval`, compare against the simulated baseline.
-2. Once `qwen3.8:27b-mlx` is pulled, run the demo with `--fallback ollama`, check fallback agreement with truth.
-3. Run a real fine-tune on Apple Silicon (`LAYA_DEVICE=mps`) and confirm `report["skipped"]` is empty.
-4. Grow the golden set and production samples with realistic, anonymised broker documents.
+1. Finish golden-v2 on Bedrock: `docs/golden/STATUS.md` has the exact steps and the decisions already taken.
+2. Score the base and fine-tuned checkpoints on golden-v2, then get it double-labelled and frozen.
+3. Apply the research report's promotion gate changes (paired McNemar and Brier bootstrap instead of point rules).
+4. Fix `LAYA_BASE` defaulting to `english`, and make the demo apply the fitted temperature, not just the threshold.
 5. Add a Step Functions / CDK sketch for the training pipeline and Iceberg adapters for the label store.
 
 ## Conventions

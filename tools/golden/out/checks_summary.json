@@ -1,0 +1,37 @@
+{
+  "rows": 349,
+  "by_file": {
+    "A:core": 225,
+    "A:boundary": 84,
+    "A:contrast": 40
+  },
+  "validator_fails": {},
+  "validator_warns": {
+    "no_broker_email_cue": 9,
+    "mentions_acord_form": 8
+  },
+  "leak_hard": {},
+  "leak_review": 0,
+  "max_char5_sim": 0.191,
+  "over_512_tokens": 10,
+  "near_dup_components_with_2_plus": 0,
+  "diversity": {
+    "A": {
+      "n": 225,
+      "distinct_2": 0.598,
+      "compression_ratio": 2.54
+    },
+    "B": {
+      "n": 0,
+      "distinct_2": 0.0,
+      "compression_ratio": 0.0
+    },
+    "training": {
+      "n": 148,
+      "distinct_2": 0.445,
+      "compression_ratio": 3.88
+    }
+  },
+  "discriminator_golden_core_vs_training": 0.962,
+  "discriminator_A_vs_B": null
+}

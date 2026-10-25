@@ -1,0 +1,2788 @@
+[
+  {
+    "name": "demo",
+    "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+    "span_id": "67dbd35fea6f7397",
+    "start": "2026-10-25T20:03:08.052903+00:00",
+    "duration_ms": 31613.646,
+    "attributes": {
+      "model": "laya",
+      "fallback": "ollama",
+      "trainer": "export",
+      "tenant": "fcci",
+      "run_dir": "var/runs/20261025-200303"
+    },
+    "children": [
+      {
+        "name": "week",
+        "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+        "span_id": "f100778cb1d1e254",
+        "start": "2026-10-25T20:03:08.053227+00:00",
+        "duration_ms": 25305.617,
+        "attributes": {
+          "week": "week1",
+          "model_version": "convaiinnovations/laya/typed-decisions",
+          "threshold": 0.85,
+          "documents": 20,
+          "auto_routed": 0
+        },
+        "children": [
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "400eb4c28d5799ce",
+            "start": "2026-10-25T20:03:08.053249+00:00",
+            "duration_ms": 11036.365,
+            "attributes": {
+              "doc_id": "week1-0",
+              "tenant_id": "fcci",
+              "template_group": "aon-sov-2026",
+              "decision_id": "16b8b359-89c8-4053-bcd1-2833eb029276",
+              "final_type": "sov",
+              "path": "sov 0.32 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "c040360a670e3bbc",
+                "start": "2026-10-25T20:03:08.053260+00:00",
+                "duration_ms": 343.754,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.3240675932406759,
+                  "probabilities.loss_run": 0.0952904709529047,
+                  "probabilities.acord": 0.24937506249375063,
+                  "probabilities.broker_email": 0.12218778122187782,
+                  "probabilities.other": 0.20907909209079092
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8885fbe35c767aeb",
+                "start": "2026-10-25T20:03:08.397079+00:00",
+                "duration_ms": 0.341,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "16b8b359-89c8-4053-bcd1-2833eb029276",
+                  "doc_hash": "50e4a68883dc625cf433eb186caaf931e8bf6f822b5291f3bdaec03b4c8725a2",
+                  "predicted": "sov",
+                  "confidence": 0.3240675932406759,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "283d9f44b7e8c3a4",
+                "start": "2026-10-25T20:03:08.397464+00:00",
+                "duration_ms": 10691.355,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "03fe1f4c46affdce",
+                "start": "2026-10-25T20:03:19.089412+00:00",
+                "duration_ms": 0.135,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "68baa657604bf525",
+            "start": "2026-10-25T20:03:19.089891+00:00",
+            "duration_ms": 2787.861,
+            "attributes": {
+              "doc_id": "week1-1",
+              "tenant_id": "fcci",
+              "template_group": "aon-sov-2026",
+              "decision_id": "8cbcfd8f-2fa7-4f0b-a5f2-b0e4584f8dce",
+              "final_type": "sov",
+              "path": "sov 0.30 | audit queued | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "4eb76b8e4bfd1719",
+                "start": "2026-10-25T20:03:19.089956+00:00",
+                "duration_ms": 1143.307,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.301,
+                  "probabilities.loss_run": 0.0989,
+                  "probabilities.acord": 0.2464,
+                  "probabilities.broker_email": 0.1311,
+                  "probabilities.other": 0.2226
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7b804e3f84fe6942",
+                "start": "2026-10-25T20:03:20.233415+00:00",
+                "duration_ms": 0.472,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "8cbcfd8f-2fa7-4f0b-a5f2-b0e4584f8dce",
+                  "doc_hash": "1759f3f5e93092b3995964dd52701d1443078364e684330a848a143ac6a9e8c6",
+                  "predicted": "sov",
+                  "confidence": 0.301,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "df1f16962cf9fcdd",
+                "start": "2026-10-25T20:03:20.233920+00:00",
+                "duration_ms": 0.011,
+                "attributes": {
+                  "decision_id": "8cbcfd8f-2fa7-4f0b-a5f2-b0e4584f8dce",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7c9436f0fe6a9145",
+                "start": "2026-10-25T20:03:20.233950+00:00",
+                "duration_ms": 1643.639,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "b7d3cc5b75d8f8d9",
+                "start": "2026-10-25T20:03:21.877688+00:00",
+                "duration_ms": 0.037,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "724e3f2c219887e8",
+            "start": "2026-10-25T20:03:21.877808+00:00",
+            "duration_ms": 1593.026,
+            "attributes": {
+              "doc_id": "week1-2",
+              "tenant_id": "fcci",
+              "template_group": "willis-sov",
+              "decision_id": "a8d9cd47-9b8d-4d8c-8ce0-834da00ede32",
+              "final_type": "sov",
+              "path": "sov 0.38 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "625873eec0f26303",
+                "start": "2026-10-25T20:03:21.877832+00:00",
+                "duration_ms": 93.743,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.3836,
+                  "probabilities.loss_run": 0.1338,
+                  "probabilities.acord": 0.1916,
+                  "probabilities.broker_email": 0.102,
+                  "probabilities.other": 0.189
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "4c815a005e289d2e",
+                "start": "2026-10-25T20:03:21.971653+00:00",
+                "duration_ms": 0.38,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "a8d9cd47-9b8d-4d8c-8ce0-834da00ede32",
+                  "doc_hash": "79bbb5dad7badd5dc5e5e1efce56444d144579c986511318553b02b2964a4862",
+                  "predicted": "sov",
+                  "confidence": 0.3836,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "d04edbd71f784d78",
+                "start": "2026-10-25T20:03:21.972070+00:00",
+                "duration_ms": 1498.589,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "5a2c780c00c798b0",
+                "start": "2026-10-25T20:03:23.470769+00:00",
+                "duration_ms": 0.038,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "da89138da39c14ae",
+            "start": "2026-10-25T20:03:23.470894+00:00",
+            "duration_ms": 575.455,
+            "attributes": {
+              "doc_id": "week1-3",
+              "tenant_id": "fcci",
+              "template_group": "lockton-sov",
+              "decision_id": "300fdaa9-ff19-437a-b016-9290959c1ff5",
+              "final_type": "sov",
+              "path": "sov 0.32 | audit queued | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3b5e0ffb4a0f7970",
+                "start": "2026-10-25T20:03:23.470964+00:00",
+                "duration_ms": 88.658,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.3204,
+                  "probabilities.loss_run": 0.1257,
+                  "probabilities.acord": 0.2292,
+                  "probabilities.broker_email": 0.1337,
+                  "probabilities.other": 0.191
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "424d278ebed37fc2",
+                "start": "2026-10-25T20:03:23.559691+00:00",
+                "duration_ms": 0.331,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "300fdaa9-ff19-437a-b016-9290959c1ff5",
+                  "doc_hash": "6c6ae6282a425f299917e7b7a39563486c524f9fdeee9b00b34db1449ef5bd0d",
+                  "predicted": "sov",
+                  "confidence": 0.3204,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "973273265ee619ab",
+                "start": "2026-10-25T20:03:23.560055+00:00",
+                "duration_ms": 0.006,
+                "attributes": {
+                  "decision_id": "300fdaa9-ff19-437a-b016-9290959c1ff5",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "a1d771ba13fc3a56",
+                "start": "2026-10-25T20:03:23.560079+00:00",
+                "duration_ms": 486.093,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "fca1b2c6f9a29f0b",
+                "start": "2026-10-25T20:03:24.046287+00:00",
+                "duration_ms": 0.036,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "c4cc94e17791ade2",
+            "start": "2026-10-25T20:03:24.046410+00:00",
+            "duration_ms": 562.818,
+            "attributes": {
+              "doc_id": "week1-4",
+              "tenant_id": "fcci",
+              "template_group": "gb-broker-sov",
+              "decision_id": "bc90d605-309f-4081-a59c-cd71ace521b2",
+              "final_type": "sov",
+              "path": "sov 0.36 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7939b4fce607bcde",
+                "start": "2026-10-25T20:03:24.046435+00:00",
+                "duration_ms": 54.748,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.35766423357664234,
+                  "probabilities.loss_run": 0.12998700129987,
+                  "probabilities.acord": 0.21537846215378464,
+                  "probabilities.broker_email": 0.1068893110688931,
+                  "probabilities.other": 0.1900809919008099
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "fc22b5556dd27819",
+                "start": "2026-10-25T20:03:24.101272+00:00",
+                "duration_ms": 0.429,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "bc90d605-309f-4081-a59c-cd71ace521b2",
+                  "doc_hash": "843b9e8c288df64786bc813734e9aae0087b54350275dd8fcac395c0ebacfc00",
+                  "predicted": "sov",
+                  "confidence": 0.35766423357664234,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "30310c4a34af8553",
+                "start": "2026-10-25T20:03:24.101746+00:00",
+                "duration_ms": 507.202,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "c91d91b4b0975d5e",
+                "start": "2026-10-25T20:03:24.609133+00:00",
+                "duration_ms": 0.055,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "cc3313253c42233c",
+            "start": "2026-10-25T20:03:24.609389+00:00",
+            "duration_ms": 552.967,
+            "attributes": {
+              "doc_id": "week1-5",
+              "tenant_id": "fcci",
+              "template_group": "aon-loss",
+              "decision_id": "39b297af-e819-49a4-9e51-8689b18a088e",
+              "final_type": "loss_run",
+              "path": "loss_run 0.72 | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7cef12c73fbc5b79",
+                "start": "2026-10-25T20:03:24.609516+00:00",
+                "duration_ms": 43.989,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0671,
+                  "probabilities.loss_run": 0.7156,
+                  "probabilities.acord": 0.1015,
+                  "probabilities.broker_email": 0.0484,
+                  "probabilities.other": 0.0674
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3a2b679961e07ee7",
+                "start": "2026-10-25T20:03:24.653613+00:00",
+                "duration_ms": 0.507,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "39b297af-e819-49a4-9e51-8689b18a088e",
+                  "doc_hash": "747fb4a4e0cf3874c61e9225b4f1b76eb6f68729335bc1cbf8b8558df88ed7e7",
+                  "predicted": "loss_run",
+                  "confidence": 0.7156,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "18c5d4d7dd5b5150",
+                "start": "2026-10-25T20:03:24.654174+00:00",
+                "duration_ms": 508.088,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "4394201bc7cb1582",
+                "start": "2026-10-25T20:03:25.162322+00:00",
+                "duration_ms": 0.02,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "8d440552c3853eee",
+            "start": "2026-10-25T20:03:25.162387+00:00",
+            "duration_ms": 560.839,
+            "attributes": {
+              "doc_id": "week1-6",
+              "tenant_id": "fcci",
+              "template_group": "marsh-loss",
+              "decision_id": "537836ed-1af0-46e1-929c-e3de64666c96",
+              "final_type": "loss_run",
+              "path": "loss_run 0.59 | audit queued | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "5c4fd0de38562ca8",
+                "start": "2026-10-25T20:03:25.162404+00:00",
+                "duration_ms": 35.897,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0883,
+                  "probabilities.loss_run": 0.5933,
+                  "probabilities.acord": 0.1575,
+                  "probabilities.broker_email": 0.068,
+                  "probabilities.other": 0.0929
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "154ac128ce7d49a9",
+                "start": "2026-10-25T20:03:25.198365+00:00",
+                "duration_ms": 0.244,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "537836ed-1af0-46e1-929c-e3de64666c96",
+                  "doc_hash": "0bbabe4a3bdeefcefa596189beb656a72b69a6c78cd71f3e57cab788cb8d88e4",
+                  "predicted": "loss_run",
+                  "confidence": 0.5933,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "1739eb637a166f24",
+                "start": "2026-10-25T20:03:25.198637+00:00",
+                "duration_ms": 0.003,
+                "attributes": {
+                  "decision_id": "537836ed-1af0-46e1-929c-e3de64666c96",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "bee6eee93681327d",
+                "start": "2026-10-25T20:03:25.198655+00:00",
+                "duration_ms": 524.333,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "05f1a881663225c0",
+                "start": "2026-10-25T20:03:25.723138+00:00",
+                "duration_ms": 0.052,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "0d63a519df98e1d1",
+            "start": "2026-10-25T20:03:25.723291+00:00",
+            "duration_ms": 586.523,
+            "attributes": {
+              "doc_id": "week1-7",
+              "tenant_id": "fcci",
+              "template_group": "howden-loss",
+              "decision_id": "ec6fc2bc-71c9-47e2-9d81-5a4b6bf6fc5b",
+              "final_type": "loss_run",
+              "path": "loss_run 0.48 | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "dfced6c5152310bf",
+                "start": "2026-10-25T20:03:25.723346+00:00",
+                "duration_ms": 55.998,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.1095,
+                  "probabilities.loss_run": 0.4833,
+                  "probabilities.acord": 0.2026,
+                  "probabilities.broker_email": 0.098,
+                  "probabilities.other": 0.1066
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8a02ef875f20dcfd",
+                "start": "2026-10-25T20:03:25.779431+00:00",
+                "duration_ms": 0.503,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "ec6fc2bc-71c9-47e2-9d81-5a4b6bf6fc5b",
+                  "doc_hash": "016e6f9bd44760d6a83b8d16357c8f06fc2742975cd5dcf641e6fce0e66b0eca",
+                  "predicted": "loss_run",
+                  "confidence": 0.4833,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "b446e0a94e0b44c1",
+                "start": "2026-10-25T20:03:25.779975+00:00",
+                "duration_ms": 529.324,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "74c48823a2d30330",
+                "start": "2026-10-25T20:03:26.309695+00:00",
+                "duration_ms": 0.068,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "30fa8ebfcc12805e",
+            "start": "2026-10-25T20:03:26.309904+00:00",
+            "duration_ms": 626.336,
+            "attributes": {
+              "doc_id": "week1-8",
+              "tenant_id": "fcci",
+              "template_group": "acord-125",
+              "decision_id": "3bccd3c7-13ba-473f-a7bf-76b19e0d0671",
+              "final_type": "acord",
+              "path": "acord 0.55 | audit queued | fallback -> acord | extract acord ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "f85ee1c0a4ae70b3",
+                "start": "2026-10-25T20:03:26.309950+00:00",
+                "duration_ms": 55.203,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0895089508950895,
+                  "probabilities.loss_run": 0.072007200720072,
+                  "probabilities.acord": 0.5462546254625462,
+                  "probabilities.broker_email": 0.13861386138613863,
+                  "probabilities.other": 0.1536153615361536
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "61e772c3e986f4b4",
+                "start": "2026-10-25T20:03:26.365230+00:00",
+                "duration_ms": 0.356,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "3bccd3c7-13ba-473f-a7bf-76b19e0d0671",
+                  "doc_hash": "c83e37dc36663cd040d009bb33fbfc8cb674e85cc292854b01a6101a3a751ce6",
+                  "predicted": "acord",
+                  "confidence": 0.5462546254625462,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "21bcdab72f18db50",
+                "start": "2026-10-25T20:03:26.365625+00:00",
+                "duration_ms": 0.007,
+                "attributes": {
+                  "decision_id": "3bccd3c7-13ba-473f-a7bf-76b19e0d0671",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "d8869246345453b5",
+                "start": "2026-10-25T20:03:26.365653+00:00",
+                "duration_ms": 570.336,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "acord",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "acord"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "bf46c8ae3784858a",
+                "start": "2026-10-25T20:03:26.936168+00:00",
+                "duration_ms": 0.041,
+                "attributes": {
+                  "doc_type": "acord",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "658a2f822785f541",
+            "start": "2026-10-25T20:03:26.936305+00:00",
+            "duration_ms": 625.566,
+            "attributes": {
+              "doc_id": "week1-9",
+              "tenant_id": "fcci",
+              "template_group": "acord-126",
+              "decision_id": "0c10b428-ea01-42f8-acca-280b597d5522",
+              "final_type": "acord",
+              "path": "acord 0.47 | fallback -> acord | extract acord ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "da785942060603d4",
+                "start": "2026-10-25T20:03:26.936333+00:00",
+                "duration_ms": 53.293,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.11341134113411341,
+                  "probabilities.loss_run": 0.09060906090609061,
+                  "probabilities.acord": 0.46994699469946993,
+                  "probabilities.broker_email": 0.13831383138313832,
+                  "probabilities.other": 0.18771877187718772
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "775669bc8cbbf0f2",
+                "start": "2026-10-25T20:03:26.989717+00:00",
+                "duration_ms": 0.406,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "0c10b428-ea01-42f8-acca-280b597d5522",
+                  "doc_hash": "8d6294d465dee7f3269cddca01a53dc03fe018c51f05c132ebda9dd42aaab0dc",
+                  "predicted": "acord",
+                  "confidence": 0.46994699469946993,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "78783e60b80460c5",
+                "start": "2026-10-25T20:03:26.990170+00:00",
+                "duration_ms": 571.439,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "acord",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "acord"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "1fbb8fdd71a76dfe",
+                "start": "2026-10-25T20:03:27.561764+00:00",
+                "duration_ms": 0.059,
+                "attributes": {
+                  "doc_type": "acord",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "8e2931af7c94db7c",
+            "start": "2026-10-25T20:03:27.561982+00:00",
+            "duration_ms": 594.795,
+            "attributes": {
+              "doc_id": "week1-10",
+              "tenant_id": "fcci",
+              "template_group": "broker-amy",
+              "decision_id": "2e9d7256-97d8-48da-bc6e-37b350c1f9ed",
+              "final_type": "broker_email",
+              "path": "broker_email 0.69 | audit queued | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "140a0cf30bf0570e",
+                "start": "2026-10-25T20:03:27.562043+00:00",
+                "duration_ms": 53.441,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0696,
+                  "probabilities.loss_run": 0.0459,
+                  "probabilities.acord": 0.1177,
+                  "probabilities.broker_email": 0.6882,
+                  "probabilities.other": 0.0786
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ca9fa55587e78c1b",
+                "start": "2026-10-25T20:03:27.615599+00:00",
+                "duration_ms": 0.475,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "2e9d7256-97d8-48da-bc6e-37b350c1f9ed",
+                  "doc_hash": "25366edb698b0bb1ac7ed3fd46fc68cac8e4da95bd289b22d5e0a13f76a5dcb0",
+                  "predicted": "broker_email",
+                  "confidence": 0.6882,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "827167723c7bf653",
+                "start": "2026-10-25T20:03:27.616125+00:00",
+                "duration_ms": 0.007,
+                "attributes": {
+                  "decision_id": "2e9d7256-97d8-48da-bc6e-37b350c1f9ed",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "a4029d2881a3f967",
+                "start": "2026-10-25T20:03:27.616161+00:00",
+                "duration_ms": 540.448,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "31a621abf7b63276",
+                "start": "2026-10-25T20:03:28.156717+00:00",
+                "duration_ms": 0.033,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "db6fa427215617ab",
+            "start": "2026-10-25T20:03:28.156850+00:00",
+            "duration_ms": 508.208,
+            "attributes": {
+              "doc_id": "week1-11",
+              "tenant_id": "fcci",
+              "template_group": "broker-tom",
+              "decision_id": "5e5f9ee7-ab2a-40d5-8014-17c2eb1a0f5f",
+              "final_type": "broker_email",
+              "path": "broker_email 0.51 | audit queued | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "dc5474f2c2a68fc9",
+                "start": "2026-10-25T20:03:28.156879+00:00",
+                "duration_ms": 44.068,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0941,
+                  "probabilities.loss_run": 0.0714,
+                  "probabilities.acord": 0.2045,
+                  "probabilities.broker_email": 0.5124,
+                  "probabilities.other": 0.1176
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "11f354f8f8014cbd",
+                "start": "2026-10-25T20:03:28.201057+00:00",
+                "duration_ms": 0.491,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "5e5f9ee7-ab2a-40d5-8014-17c2eb1a0f5f",
+                  "doc_hash": "7dea962ce441b7163c0f1875cfa27db69e839176f83aa8b0950c23121bd4456d",
+                  "predicted": "broker_email",
+                  "confidence": 0.5124,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "e3d9d4596e3fd241",
+                "start": "2026-10-25T20:03:28.201614+00:00",
+                "duration_ms": 0.008,
+                "attributes": {
+                  "decision_id": "5e5f9ee7-ab2a-40d5-8014-17c2eb1a0f5f",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3a44f0927c1278af",
+                "start": "2026-10-25T20:03:28.201652+00:00",
+                "duration_ms": 463.082,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "a17581a5d4b019d2",
+                "start": "2026-10-25T20:03:28.664893+00:00",
+                "duration_ms": 0.106,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "9848ace7b263ef96",
+            "start": "2026-10-25T20:03:28.665200+00:00",
+            "duration_ms": 493.391,
+            "attributes": {
+              "doc_id": "week1-12",
+              "tenant_id": "fcci",
+              "template_group": "broker-lee",
+              "decision_id": "236c444b-6458-4712-bac8-e5ece40797fb",
+              "final_type": "broker_email",
+              "path": "broker_email 0.60 | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "93d545abb4c316ee",
+                "start": "2026-10-25T20:03:28.665244+00:00",
+                "duration_ms": 45.964,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.07870787078707871,
+                  "probabilities.loss_run": 0.0631063106310631,
+                  "probabilities.acord": 0.14291429142914291,
+                  "probabilities.broker_email": 0.6048604860486049,
+                  "probabilities.other": 0.1104110411041104
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3088953870e85909",
+                "start": "2026-10-25T20:03:28.711286+00:00",
+                "duration_ms": 0.371,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "236c444b-6458-4712-bac8-e5ece40797fb",
+                  "doc_hash": "ddaf3b405acee866a3c2c4663416919305c16cfc074fe43d3a8d95b7558f5249",
+                  "predicted": "broker_email",
+                  "confidence": 0.6048604860486049,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "315370486ffd1acb",
+                "start": "2026-10-25T20:03:28.711693+00:00",
+                "duration_ms": 446.707,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "4800d4d395afcb75",
+                "start": "2026-10-25T20:03:29.158506+00:00",
+                "duration_ms": 0.052,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "4f321aa2a5803120",
+            "start": "2026-10-25T20:03:29.158685+00:00",
+            "duration_ms": 531.164,
+            "attributes": {
+              "doc_id": "week1-13",
+              "tenant_id": "fcci",
+              "template_group": "g-aon-sov",
+              "decision_id": "3bc259bf-d7a9-4620-8e2d-cdc65f0dc3b1",
+              "final_type": "sov",
+              "path": "sov 0.46 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "6b806207e17af2bf",
+                "start": "2026-10-25T20:03:29.158710+00:00",
+                "duration_ms": 40.362,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.4588,
+                  "probabilities.loss_run": 0.0895,
+                  "probabilities.acord": 0.1966,
+                  "probabilities.broker_email": 0.087,
+                  "probabilities.other": 0.1681
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "15998256e95709b8",
+                "start": "2026-10-25T20:03:29.199176+00:00",
+                "duration_ms": 0.445,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "3bc259bf-d7a9-4620-8e2d-cdc65f0dc3b1",
+                  "doc_hash": "225e026c4d3a467420f190ff0a48cd347c8918a92818607200f62cd227360d09",
+                  "predicted": "sov",
+                  "confidence": 0.4588,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8cd17109e00239ef",
+                "start": "2026-10-25T20:03:29.199676+00:00",
+                "duration_ms": 489.808,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "026146c7abf5a4db",
+                "start": "2026-10-25T20:03:29.689707+00:00",
+                "duration_ms": 0.091,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "701dd99216bf1b6e",
+            "start": "2026-10-25T20:03:29.689965+00:00",
+            "duration_ms": 618.914,
+            "attributes": {
+              "doc_id": "week1-14",
+              "tenant_id": "fcci",
+              "template_group": "g-aon-sov",
+              "decision_id": "1ed38f0c-5b64-4bd6-a112-451cefa22421",
+              "final_type": "sov",
+              "path": "sov 0.47 | audit queued | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "e91f5c0c2d30dcf1",
+                "start": "2026-10-25T20:03:29.690032+00:00",
+                "duration_ms": 49.043,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.474,
+                  "probabilities.loss_run": 0.0791,
+                  "probabilities.acord": 0.1965,
+                  "probabilities.broker_email": 0.0889,
+                  "probabilities.other": 0.1615
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7a3ebffe34c5de69",
+                "start": "2026-10-25T20:03:29.739140+00:00",
+                "duration_ms": 0.34,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "1ed38f0c-5b64-4bd6-a112-451cefa22421",
+                  "doc_hash": "067cc82ae8fd418a01f826801b05cbacae82e94f17862e03a2701b0f8cccffd9",
+                  "predicted": "sov",
+                  "confidence": 0.474,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "cf2036d0b32cd997",
+                "start": "2026-10-25T20:03:29.739510+00:00",
+                "duration_ms": 0.004,
+                "attributes": {
+                  "decision_id": "1ed38f0c-5b64-4bd6-a112-451cefa22421",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "994b947eb8a0d2d2",
+                "start": "2026-10-25T20:03:29.739531+00:00",
+                "duration_ms": 569.236,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3a90c7aec7446eef",
+                "start": "2026-10-25T20:03:30.308835+00:00",
+                "duration_ms": 0.029,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "e11a437b259322c7",
+            "start": "2026-10-25T20:03:30.308918+00:00",
+            "duration_ms": 540.764,
+            "attributes": {
+              "doc_id": "week1-15",
+              "tenant_id": "fcci",
+              "template_group": "surveyor-a",
+              "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+              "final_type": "none",
+              "path": "other 0.33 | audit queued | fallback -> other | review: other"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "b3bf2385ba068b28",
+                "start": "2026-10-25T20:03:30.308931+00:00",
+                "duration_ms": 46.57,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.1584,
+                  "probabilities.loss_run": 0.0957,
+                  "probabilities.acord": 0.2758,
+                  "probabilities.broker_email": 0.1388,
+                  "probabilities.other": 0.3313
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "974ba6afe4f78761",
+                "start": "2026-10-25T20:03:30.355561+00:00",
+                "duration_ms": 1.177,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+                  "doc_hash": "d09dc55b845668b967fa1ba0bbea21bb2e9f245e74583ef9aa3e68b52e8870df",
+                  "predicted": "other",
+                  "confidence": 0.3313,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "9ab7ee050d8fd265",
+                "start": "2026-10-25T20:03:30.356764+00:00",
+                "duration_ms": 0.004,
+                "attributes": {
+                  "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "9dab65d0d5fdadf1",
+                "start": "2026-10-25T20:03:30.356781+00:00",
+                "duration_ms": 492.824,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "other",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "other"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "bf7912c21a203a92",
+                "start": "2026-10-25T20:03:30.849661+00:00",
+                "duration_ms": 0.006,
+                "attributes": {
+                  "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+                  "reason": "typed as other"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "988b0582acff3cb3",
+            "start": "2026-10-25T20:03:30.849710+00:00",
+            "duration_ms": 621.138,
+            "attributes": {
+              "doc_id": "week1-16",
+              "tenant_id": "fcci",
+              "template_group": "willis-sov",
+              "decision_id": "9ad00779-1f5d-44da-afda-b683cf1756dd",
+              "final_type": "sov",
+              "path": "sov 0.30 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "9d14060988fc8e27",
+                "start": "2026-10-25T20:03:30.849722+00:00",
+                "duration_ms": 47.663,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.2967,
+                  "probabilities.loss_run": 0.1264,
+                  "probabilities.acord": 0.2308,
+                  "probabilities.broker_email": 0.1234,
+                  "probabilities.other": 0.2227
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "9c9abadadd0ce3c4",
+                "start": "2026-10-25T20:03:30.897454+00:00",
+                "duration_ms": 0.29,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "9ad00779-1f5d-44da-afda-b683cf1756dd",
+                  "doc_hash": "8f779c40fb96971663df34f5b7b212db22411f85484fe75c965a4282c928e540",
+                  "predicted": "sov",
+                  "confidence": 0.2967,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ecdb1f3fd6cdbfe5",
+                "start": "2026-10-25T20:03:30.897774+00:00",
+                "duration_ms": 572.908,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3122872a5865285f",
+                "start": "2026-10-25T20:03:31.470779+00:00",
+                "duration_ms": 0.046,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "5c677c693be03f35",
+            "start": "2026-10-25T20:03:31.470979+00:00",
+            "duration_ms": 581.919,
+            "attributes": {
+              "doc_id": "week1-17",
+              "tenant_id": "fcci",
+              "template_group": "lockton-sov",
+              "decision_id": "e32ce030-1df7-4ed0-ad6c-2b2f4dca358c",
+              "final_type": "sov",
+              "path": "sov 0.26 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "43f567372a3fd540",
+                "start": "2026-10-25T20:03:31.471044+00:00",
+                "duration_ms": 50.596,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.26307369263073693,
+                  "probabilities.loss_run": 0.11388861113888611,
+                  "probabilities.acord": 0.261973802619738,
+                  "probabilities.broker_email": 0.13648635136486353,
+                  "probabilities.other": 0.22457754224577542
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "e633bed47bdc1419",
+                "start": "2026-10-25T20:03:31.521709+00:00",
+                "duration_ms": 0.458,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "e32ce030-1df7-4ed0-ad6c-2b2f4dca358c",
+                  "doc_hash": "f0130ff798dadd8be85746e16ed49d05177ca2f0b58c3970cba4b7ec44bbecfe",
+                  "predicted": "sov",
+                  "confidence": 0.26307369263073693,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "de163a05d3150a8e",
+                "start": "2026-10-25T20:03:31.522207+00:00",
+                "duration_ms": 530.488,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "0fd1d5183ef62b75",
+                "start": "2026-10-25T20:03:32.052825+00:00",
+                "duration_ms": 0.043,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "d04f7a79d7220167",
+            "start": "2026-10-25T20:03:32.052965+00:00",
+            "duration_ms": 571.703,
+            "attributes": {
+              "doc_id": "week1-18",
+              "tenant_id": "fcci",
+              "template_group": "aon-loss",
+              "decision_id": "969df2f2-5749-4cff-8619-55c0b7657cb7",
+              "final_type": "loss_run",
+              "path": "loss_run 0.68 | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7b7683e934784983",
+                "start": "2026-10-25T20:03:32.052996+00:00",
+                "duration_ms": 44.256,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0661,
+                  "probabilities.loss_run": 0.6828,
+                  "probabilities.acord": 0.1229,
+                  "probabilities.broker_email": 0.0582,
+                  "probabilities.other": 0.07
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "894bb1aca048ce84",
+                "start": "2026-10-25T20:03:32.097348+00:00",
+                "duration_ms": 0.435,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "969df2f2-5749-4cff-8619-55c0b7657cb7",
+                  "doc_hash": "0052158f9e7c2413a5fb9055c5800a3d51c8993814e6ce850aa4898b34a0cdb8",
+                  "predicted": "loss_run",
+                  "confidence": 0.6828,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8fbb96d8fe07d83f",
+                "start": "2026-10-25T20:03:32.097820+00:00",
+                "duration_ms": 526.776,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ccba6602ad5d97ac",
+                "start": "2026-10-25T20:03:32.624643+00:00",
+                "duration_ms": 0.014,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "beec906ff454fcf9",
+            "start": "2026-10-25T20:03:32.628020+00:00",
+            "duration_ms": 601.644,
+            "attributes": {
+              "doc_id": "week1-19",
+              "tenant_id": "fcci",
+              "template_group": "broker-kim",
+              "decision_id": "9453f43b-c6c4-489a-8070-1192b8c17313",
+              "final_type": "broker_email",
+              "path": "broker_email 0.61 | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "fac0fcf1ed2aa4d0",
+                "start": "2026-10-25T20:03:32.628035+00:00",
+                "duration_ms": 71.193,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0837,
+                  "probabilities.loss_run": 0.06,
+                  "probabilities.acord": 0.1572,
+                  "probabilities.broker_email": 0.6098,
+                  "probabilities.other": 0.0893
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "aae79429b321805e",
+                "start": "2026-10-25T20:03:32.699293+00:00",
+                "duration_ms": 0.292,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "9453f43b-c6c4-489a-8070-1192b8c17313",
+                  "doc_hash": "4fcfd791146f9116129b2b8617bf19e7077c0317642a653355d0295d41ca7f0e",
+                  "predicted": "broker_email",
+                  "confidence": 0.6098,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8ed5913c20dd8794",
+                "start": "2026-10-25T20:03:32.699610+00:00",
+                "duration_ms": 529.965,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "05702f047ec5bd01",
+                "start": "2026-10-25T20:03:33.229639+00:00",
+                "duration_ms": 0.014,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "ops.review",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "80117024b209b4a0",
+            "start": "2026-10-25T20:03:33.235256+00:00",
+            "duration_ms": 7.665,
+            "attributes": {
+              "actor": "ops:reviewer",
+              "items": 9
+            },
+            "events": [
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "8cbcfd8f-2fa7-4f0b-a5f2-b0e4584f8dce",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "sov"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "300fdaa9-ff19-437a-b016-9290959c1ff5",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "sov"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "537836ed-1af0-46e1-929c-e3de64666c96",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "loss_run"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "3bccd3c7-13ba-473f-a7bf-76b19e0d0671",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "acord"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "2e9d7256-97d8-48da-bc6e-37b350c1f9ed",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "broker_email"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "5e5f9ee7-ab2a-40d5-8014-17c2eb1a0f5f",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "broker_email"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "1ed38f0c-5b64-4bd6-a112-451cefa22421",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "sov"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "other"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "87c9715c-5a1b-4c74-9d16-4db278611832",
+                  "reason": "typed as other",
+                  "source": "HUMAN",
+                  "doc_type": "other"
+                }
+              }
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "calibration",
+        "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+        "span_id": "c0ebb6ebfe73bd2d",
+        "start": "2026-10-25T20:03:33.360024+00:00",
+        "duration_ms": 3.656,
+        "attributes": {
+          "min_audit_sample": 30,
+          "audited": 8,
+          "fitted": false,
+          "threshold": 0.85
+        },
+        "children": []
+      },
+      {
+        "name": "training.run",
+        "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+        "span_id": "fcfc79242e6c97e8",
+        "start": "2026-10-25T20:03:33.363727+00:00",
+        "duration_ms": 474.79,
+        "attributes": {
+          "tenant_id": "fcci",
+          "new_version": "candidate-v2",
+          "threshold": 0.85,
+          "min_source": "LLM_FALLBACK",
+          "promoted": false,
+          "reasons": "trainer exported data only"
+        },
+        "children": [
+          {
+            "name": "snapshot.build",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "dc90c0fa138152f5",
+            "start": "2026-10-25T20:03:33.363752+00:00",
+            "duration_ms": 30.835,
+            "attributes": {
+              "uri": "var/runs/20261025-200303/fcci/snapshots/433ba1b3-8e7d-4bce-aaf2-e50b6b1b39be/manifest.json",
+              "snapshot_id": "433ba1b3-8e7d-4bce-aaf2-e50b6b1b39be",
+              "examples": 18,
+              "excluded.golden": 1,
+              "excluded.template": 1,
+              "excluded.conflict": 0,
+              "excluded.below_floor": 0
+            },
+            "children": []
+          },
+          {
+            "name": "eval.current",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "2c25e72fd51f362c",
+            "start": "2026-10-25T20:03:33.394636+00:00",
+            "duration_ms": 441.427,
+            "attributes": {
+              "model_version": "convaiinnovations/laya/typed-decisions",
+              "golden_version": "golden-v1",
+              "n": 10,
+              "accuracy": 0.9,
+              "ece": 0.49053027197280263,
+              "coverage": 0.0,
+              "auto_error": 0.0,
+              "recall.sov": 0.6666666666666666,
+              "recall.loss_run": 1.0,
+              "recall.acord": 1.0,
+              "recall.broker_email": 1.0,
+              "recall.other": 1.0
+            },
+            "children": []
+          },
+          {
+            "name": "trainer.fine_tune",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "b7c50d6ebabb3c50",
+            "start": "2026-10-25T20:03:33.836118+00:00",
+            "duration_ms": 2.373,
+            "attributes": {
+              "base": "convaiinnovations/laya/typed-decisions",
+              "trainer": "ExportTrainer",
+              "candidate": "none (exported data only)"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "week",
+        "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+        "span_id": "c250e3ad992c1d25",
+        "start": "2026-10-25T20:03:33.840081+00:00",
+        "duration_ms": 5817.882,
+        "attributes": {
+          "week": "week2",
+          "model_version": "convaiinnovations/laya/typed-decisions",
+          "threshold": 0.85,
+          "documents": 8,
+          "auto_routed": 0
+        },
+        "children": [
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "6e5a6e4a586f9ffa",
+            "start": "2026-10-25T20:03:33.840108+00:00",
+            "duration_ms": 620.939,
+            "attributes": {
+              "doc_id": "week2-0",
+              "tenant_id": "fcci",
+              "template_group": "ajg-sov",
+              "decision_id": "1329236c-20ec-4d08-a80f-f6e7cd3ffa1e",
+              "final_type": "sov",
+              "path": "sov 0.40 | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "273384c0d42155a9",
+                "start": "2026-10-25T20:03:33.840123+00:00",
+                "duration_ms": 31.371,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.3958,
+                  "probabilities.loss_run": 0.1298,
+                  "probabilities.acord": 0.2025,
+                  "probabilities.broker_email": 0.1031,
+                  "probabilities.other": 0.1688
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "dcdd96035f81ec8a",
+                "start": "2026-10-25T20:03:33.871561+00:00",
+                "duration_ms": 0.319,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "1329236c-20ec-4d08-a80f-f6e7cd3ffa1e",
+                  "doc_hash": "a857884f4a0f6f8118e6365a91157e0023e1c15b1ffa8560aa7ce80685e0f80a",
+                  "predicted": "sov",
+                  "confidence": 0.3958,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "d45ea768e3c14c6c",
+                "start": "2026-10-25T20:03:33.871908+00:00",
+                "duration_ms": 589.035,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "056075eb3d652d13",
+                "start": "2026-10-25T20:03:34.461019+00:00",
+                "duration_ms": 0.016,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "7368d5fd99548856",
+            "start": "2026-10-25T20:03:34.461076+00:00",
+            "duration_ms": 581.149,
+            "attributes": {
+              "doc_id": "week2-1",
+              "tenant_id": "fcci",
+              "template_group": "bms-sov",
+              "decision_id": "4dd91bba-040b-4768-899e-4072f114157d",
+              "final_type": "sov",
+              "path": "sov 0.31 | audit queued | fallback -> sov | extract sov ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "fc71342bc9f595a6",
+                "start": "2026-10-25T20:03:34.461088+00:00",
+                "duration_ms": 42.494,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.3133,
+                  "probabilities.loss_run": 0.1076,
+                  "probabilities.acord": 0.241,
+                  "probabilities.broker_email": 0.1245,
+                  "probabilities.other": 0.2136
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "8fffb70edcae23ab",
+                "start": "2026-10-25T20:03:34.503658+00:00",
+                "duration_ms": 0.343,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "4dd91bba-040b-4768-899e-4072f114157d",
+                  "doc_hash": "21ac04c2ba3abca5c64e55b75b8d2043242d1b08eb8853314b213fe87e1d69fb",
+                  "predicted": "sov",
+                  "confidence": 0.3133,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "6df57be976179402",
+                "start": "2026-10-25T20:03:34.504030+00:00",
+                "duration_ms": 0.004,
+                "attributes": {
+                  "decision_id": "4dd91bba-040b-4768-899e-4072f114157d",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "5ba434ee5a449f70",
+                "start": "2026-10-25T20:03:34.504048+00:00",
+                "duration_ms": 537.957,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "sov",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "sov"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "c1f4725334e4c362",
+                "start": "2026-10-25T20:03:35.042146+00:00",
+                "duration_ms": 0.046,
+                "attributes": {
+                  "doc_type": "sov",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "e131114c707dad37",
+            "start": "2026-10-25T20:03:35.042292+00:00",
+            "duration_ms": 1325.403,
+            "attributes": {
+              "doc_id": "week2-2",
+              "tenant_id": "fcci",
+              "template_group": "ajg-loss",
+              "decision_id": "a0f67cfc-378e-48ed-af1c-850ad3720769",
+              "final_type": "loss_run",
+              "path": "loss_run 0.63 | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "15b37cea923a3b51",
+                "start": "2026-10-25T20:03:35.042319+00:00",
+                "duration_ms": 36.826,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.08039196080391961,
+                  "probabilities.loss_run": 0.6266373362663734,
+                  "probabilities.acord": 0.13638636136386362,
+                  "probabilities.broker_email": 0.06699330066993302,
+                  "probabilities.other": 0.08959104089591041
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "4258970b6eb0b802",
+                "start": "2026-10-25T20:03:35.079212+00:00",
+                "duration_ms": 0.412,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "a0f67cfc-378e-48ed-af1c-850ad3720769",
+                  "doc_hash": "36b709c6f13731c6ed4f5813135af200c59044296086ef6e0631d3a366f3089b",
+                  "predicted": "loss_run",
+                  "confidence": 0.6266373362663734,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "433ca9125af54403",
+                "start": "2026-10-25T20:03:35.079692+00:00",
+                "duration_ms": 1287.842,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "a8fee31e06a58803",
+                "start": "2026-10-25T20:03:36.367631+00:00",
+                "duration_ms": 0.036,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "2f33926f15aee4e9",
+            "start": "2026-10-25T20:03:36.367754+00:00",
+            "duration_ms": 719.268,
+            "attributes": {
+              "doc_id": "week2-3",
+              "tenant_id": "fcci",
+              "template_group": "bms-loss",
+              "decision_id": "de3a3f61-6093-4438-8843-2d8978c2c187",
+              "final_type": "loss_run",
+              "path": "loss_run 0.41 | fallback -> loss_run | extract loss_run ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "5a7662e1538093c5",
+                "start": "2026-10-25T20:03:36.367794+00:00",
+                "duration_ms": 77.593,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.147,
+                  "probabilities.loss_run": 0.4098,
+                  "probabilities.acord": 0.2064,
+                  "probabilities.broker_email": 0.1132,
+                  "probabilities.other": 0.1236
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "421b8ecc61936e4b",
+                "start": "2026-10-25T20:03:36.445449+00:00",
+                "duration_ms": 0.386,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "de3a3f61-6093-4438-8843-2d8978c2c187",
+                  "doc_hash": "6134904a29370a06084f736adcec674ea90bb008ca8d803d1098f4e415f6ab3c",
+                  "predicted": "loss_run",
+                  "confidence": 0.4098,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "1d71a77fc04d0b6e",
+                "start": "2026-10-25T20:03:36.445870+00:00",
+                "duration_ms": 641.08,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "loss_run",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "loss_run"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "bd8999a3d5d1d324",
+                "start": "2026-10-25T20:03:37.086996+00:00",
+                "duration_ms": 0.015,
+                "attributes": {
+                  "doc_type": "loss_run",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "a69b1b73acf55667",
+            "start": "2026-10-25T20:03:37.087048+00:00",
+            "duration_ms": 591.119,
+            "attributes": {
+              "doc_id": "week2-4",
+              "tenant_id": "fcci",
+              "template_group": "acord-140",
+              "decision_id": "0fa6fdd7-3818-462f-a6b1-cf3f28295230",
+              "final_type": "acord",
+              "path": "acord 0.43 | audit queued | fallback -> acord | extract acord ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "7ac354be4505f663",
+                "start": "2026-10-25T20:03:37.087060+00:00",
+                "duration_ms": 38.942,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.1497,
+                  "probabilities.loss_run": 0.0795,
+                  "probabilities.acord": 0.4282,
+                  "probabilities.broker_email": 0.1313,
+                  "probabilities.other": 0.2113
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "09a53da2b8d325e5",
+                "start": "2026-10-25T20:03:37.126060+00:00",
+                "duration_ms": 0.285,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "0fa6fdd7-3818-462f-a6b1-cf3f28295230",
+                  "doc_hash": "ece87b3d23f366cedfcaca09ef0a4c9ff1d7555a645f242c054ff00a835d4f73",
+                  "predicted": "acord",
+                  "confidence": 0.4282,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "143ec78ad5aca36a",
+                "start": "2026-10-25T20:03:37.126372+00:00",
+                "duration_ms": 0.003,
+                "attributes": {
+                  "decision_id": "0fa6fdd7-3818-462f-a6b1-cf3f28295230",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "c349d4a83f2f8b25",
+                "start": "2026-10-25T20:03:37.126392+00:00",
+                "duration_ms": 551.697,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "acord",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "acord"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "e86ce51f40470c45",
+                "start": "2026-10-25T20:03:37.678139+00:00",
+                "duration_ms": 0.016,
+                "attributes": {
+                  "doc_type": "acord",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "d8c99c0f03503b84",
+            "start": "2026-10-25T20:03:37.678194+00:00",
+            "duration_ms": 579.783,
+            "attributes": {
+              "doc_id": "week2-5",
+              "tenant_id": "fcci",
+              "template_group": "broker-sam",
+              "decision_id": "6bab6330-9b86-41a8-b6d1-febe786a354f",
+              "final_type": "broker_email",
+              "path": "broker_email 0.65 | audit queued | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ecf5714666afb79f",
+                "start": "2026-10-25T20:03:37.678205+00:00",
+                "duration_ms": 68.427,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.0585,
+                  "probabilities.loss_run": 0.0518,
+                  "probabilities.acord": 0.1605,
+                  "probabilities.broker_email": 0.6549,
+                  "probabilities.other": 0.0743
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "56062222d1ddcd57",
+                "start": "2026-10-25T20:03:37.746712+00:00",
+                "duration_ms": 0.497,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "6bab6330-9b86-41a8-b6d1-febe786a354f",
+                  "doc_hash": "feddbc38452ec778c612ba6440f75969d384dc83d0d4af591ba2ea253c226784",
+                  "predicted": "broker_email",
+                  "confidence": 0.6549,
+                  "route": "fallback",
+                  "audited": true
+                },
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "456fb8fe85bc4b4a",
+                "start": "2026-10-25T20:03:37.747262+00:00",
+                "duration_ms": 0.006,
+                "attributes": {
+                  "decision_id": "6bab6330-9b86-41a8-b6d1-febe786a354f",
+                  "reason": "audit sample"
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "9f2f3bc960d8ba4c",
+                "start": "2026-10-25T20:03:37.747288+00:00",
+                "duration_ms": 510.609,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "cfc6a0aa4aa480d7",
+                "start": "2026-10-25T20:03:38.257947+00:00",
+                "duration_ms": 0.015,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "6b51470a20081179",
+            "start": "2026-10-25T20:03:38.258002+00:00",
+            "duration_ms": 778.379,
+            "attributes": {
+              "doc_id": "week2-6",
+              "tenant_id": "fcci",
+              "template_group": "broker-ana",
+              "decision_id": "f549b8af-8f6f-4fe5-8821-e7a5f4958b69",
+              "final_type": "broker_email",
+              "path": "broker_email 0.43 | fallback -> broker_email | extract broker_email ok"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "3dc363b2ef8b68d4",
+                "start": "2026-10-25T20:03:38.258014+00:00",
+                "duration_ms": 34.029,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.1319,
+                  "probabilities.loss_run": 0.0823,
+                  "probabilities.acord": 0.2234,
+                  "probabilities.broker_email": 0.4314,
+                  "probabilities.other": 0.131
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "64065d6a98dfaafb",
+                "start": "2026-10-25T20:03:38.292123+00:00",
+                "duration_ms": 3.698,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "f549b8af-8f6f-4fe5-8821-e7a5f4958b69",
+                  "doc_hash": "aef52e43a37267b7bc2e357a84e3f70a7eaa98e0d15e0918fdc87df1ea569d45",
+                  "predicted": "broker_email",
+                  "confidence": 0.4314,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ec81e7f7a39e89f4",
+                "start": "2026-10-25T20:03:38.295860+00:00",
+                "duration_ms": 740.412,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "broker_email",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "broker_email"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "extract",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "92f557dba058bd6d",
+                "start": "2026-10-25T20:03:39.036346+00:00",
+                "duration_ms": 0.022,
+                "attributes": {
+                  "doc_type": "broker_email",
+                  "ok": true,
+                  "error": ""
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "intake.document",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "2214bffbb4b1d54c",
+            "start": "2026-10-25T20:03:39.036411+00:00",
+            "duration_ms": 620.706,
+            "attributes": {
+              "doc_id": "week2-7",
+              "tenant_id": "fcci",
+              "template_group": "valuer-b",
+              "decision_id": "cb54aa1d-2871-4685-a0e7-80cac6b24246",
+              "final_type": "none",
+              "path": "other 0.33 | fallback -> other | review: other"
+            },
+            "children": [
+              {
+                "name": "model.predict",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "6ed6043d33de3899",
+                "start": "2026-10-25T20:03:39.036423+00:00",
+                "duration_ms": 37.264,
+                "attributes": {
+                  "model_version": "convaiinnovations/laya/typed-decisions",
+                  "probabilities.sov": 0.1978,
+                  "probabilities.loss_run": 0.0884,
+                  "probabilities.acord": 0.2605,
+                  "probabilities.broker_email": 0.1243,
+                  "probabilities.other": 0.329
+                },
+                "children": []
+              },
+              {
+                "name": "gate",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "ef9eedd0ce9ddd3d",
+                "start": "2026-10-25T20:03:39.073767+00:00",
+                "duration_ms": 0.401,
+                "attributes": {
+                  "threshold": 0.85,
+                  "decision_id": "cb54aa1d-2871-4685-a0e7-80cac6b24246",
+                  "doc_hash": "e13533f77923c464ba1bc2b2c5c0aac143c5866ca32c012d2a859fca40878f11",
+                  "predicted": "other",
+                  "confidence": 0.329,
+                  "route": "fallback",
+                  "audited": false
+                },
+                "children": []
+              },
+              {
+                "name": "fallback.classify",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "07ba3b7d163f18ab",
+                "start": "2026-10-25T20:03:39.074200+00:00",
+                "duration_ms": 582.787,
+                "attributes": {
+                  "actor": "ollama:qwen3.8:27b-mlx",
+                  "doc_type": "other",
+                  "agrees_with_model": true
+                },
+                "events": [
+                  {
+                    "name": "label",
+                    "attributes": {
+                      "source": "LLM_FALLBACK",
+                      "doc_type": "other"
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "name": "review.queue",
+                "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+                "span_id": "c4c02644ca03b5d7",
+                "start": "2026-10-25T20:03:39.657081+00:00",
+                "duration_ms": 0.01,
+                "attributes": {
+                  "decision_id": "cb54aa1d-2871-4685-a0e7-80cac6b24246",
+                  "reason": "typed as other"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "ops.review",
+            "trace_id": "2dd596603d9454fe37cace2861fb56cb",
+            "span_id": "5faea1205796b1a2",
+            "start": "2026-10-25T20:03:39.657171+00:00",
+            "duration_ms": 0.755,
+            "attributes": {
+              "actor": "ops:reviewer",
+              "items": 4
+            },
+            "events": [
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "4dd91bba-040b-4768-899e-4072f114157d",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "sov"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "0fa6fdd7-3818-462f-a6b1-cf3f28295230",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "acord"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "6bab6330-9b86-41a8-b6d1-febe786a354f",
+                  "reason": "audit sample",
+                  "source": "HUMAN",
+                  "doc_type": "broker_email"
+                }
+              },
+              {
+                "name": "label",
+                "attributes": {
+                  "decision_id": "cb54aa1d-2871-4685-a0e7-80cac6b24246",
+                  "reason": "typed as other",
+                  "source": "HUMAN",
+                  "doc_type": "other"
+                }
+              }
+            ],
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

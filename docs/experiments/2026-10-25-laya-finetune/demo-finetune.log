@@ -1,0 +1,202 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 2535.55it/s]
+W1025 20:29:56.413000 58724 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+/Users/dan/host-code/doc-type-recognition-with-laya/.venv/lib/python3.12/site-packages/laya/agent.py:2157: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+model=laya fallback=ollama trainer=laya run=var/runs/20261025-202953
+
+== week1: convaiinnovations/laya/typed-decisions, threshold 0.85
+  Schedule of values 22 locations TIV 140m        sov 0.32 | fallback -> sov | extract sov ok
+  Schedule of values 3 locations TIV 4.5m         sov 0.30 | audit queued | fallback -> sov | extract sov ok
+  Statement of exposures 11 premises, tiv 51m, 1  sov 0.38 | fallback -> sov | extract sov ok
+  Exposure summary 7 premises insured values 18m  sov 0.32 | audit queued | fallback -> sov | extract sov ok
+  Premises list and statement of exposures, 4 lo  sov 0.36 | fallback -> sov | extract sov ok
+  Loss run 5 years incurred 2.1m claims 7         loss_run 0.72 | fallback -> loss_run | extract loss_run ok
+  Loss history 4 yr incurred 300k                 loss_run 0.59 | audit queued | fallback -> loss_run | extract loss_run ok
+  Carrier loss summary 5 year incurred 880k, lar  loss_run 0.48 | fallback -> loss_run | extract loss_run ok
+  ACORD 125 application commercial                acord 0.55 | audit queued | fallback -> acord | extract acord ok
+  ACORD 126 general liability section             acord 0.47 | fallback -> acord | extract acord ok
+  From: amy@broker.com Fwd: please find submissi  broker_email 0.69 | audit queued | fallback -> broker_email | extract broker_email ok
+  From: tom@mga.co.uk Re: renewal pack attached   broker_email 0.51 | audit queued | fallback -> broker_email | extract broker_email ok
+  From: lee@broker.com Dear underwriter, see att  broker_email 0.60 | fallback -> broker_email | extract broker_email ok
+  Statement of values: 14 locations, total TIV 8  sov 0.46 | fallback -> sov | extract sov ok
+  Statement of values: 15 locations, total TIV 9  sov 0.47 | audit queued | fallback -> sov | extract sov ok
+  Survey report roof condition photos             other 0.33 | audit queued | fallback -> other | review: other
+  Premises register and exposures, 6 locations,   sov 0.30 | fallback -> sov | extract sov ok
+  Insured values by premises, 5 locations, TIV 1  sov 0.26 | fallback -> sov | extract sov ok
+  Five yr incurred 650k loss run                  loss_run 0.68 | fallback -> loss_run | extract loss_run ok
+  From: kim@broker.com Re: updated exposures att  broker_email 0.61 | fallback -> broker_email | extract broker_email ok
+  ACORD 137 commercial auto section, applicant i  acord 0.41 | fallback -> acord | extract acord ok
+  Claims experience 10 years incurred 3,309,478,  loss_run 0.39 | audit queued | fallback -> loss_run | extract loss_run ok
+  ACORD 125 commercial insurance application, ad  acord 0.46 | fallback -> acord | extract acord ok
+  Carrier loss summary five year incurred 2119k,  loss_run 0.52 | fallback -> loss_run | extract loss_run ok
+  Statement of exposures, 58 locations, building  sov 0.34 | audit queued | fallback -> sov | review: no extractor accepted
+  Claims experience 10 years incurred 3349k, val  loss_run 0.34 | audit queued | fallback -> loss_run | extract loss_run ok
+  ACORD 130 workers compensation application, sc  acord 0.40 | fallback -> acord | extract acord ok
+  Location schedule, 54 locations, buildings and  other 0.28 | fallback -> sov | review: no extractor accepted
+  Property schedule 56 locations, TIV 354,596,64  sov 0.30 | audit queued | fallback -> sov | extract sov ok
+  ACORD 137 commercial auto section, prior carri  acord 0.39 | fallback -> acord | extract acord ok
+  Engineering inspection certificate, lifting eq  other 0.32 | fallback -> other | review: other
+  Site plan and aerial photography, building foo  acord 0.29 | fallback -> other | review: other
+  Loss report 5 years incurred 1.6m, 3 open clai  loss_run 0.55 | fallback -> loss_run | extract loss_run ok
+  Valuation report for warehouse, reinstatement   other 0.31 | audit queued | fallback -> other | review: other
+  ACORD 140 property section, prior carrier info  acord 0.40 | audit queued | fallback -> acord | extract acord ok
+  ACORD 125 commercial insurance application, ad  acord 0.45 | audit queued | fallback -> acord | extract acord ok
+  Schedule of values, 49 locations, TIV £343m. O  sov 0.35 | fallback -> sov | review: no extractor accepted
+  Insured values by location 17 locations, TIV 5  sov 0.27 | fallback -> sov | extract sov ok
+  Market presentation, client overview and place  acord 0.28 | fallback -> other | review: other
+  ACORD 126 general liability section, prior car  acord 0.43 | fallback -> acord | extract acord ok
+  Sanctions screening and KYC confirmation for t  acord 0.30 | fallback -> other | review: other
+  Statement of exposures 10 locations, TIV 31380  sov 0.33 | fallback -> sov | extract sov ok
+  Carrier loss summary 3 yr incurred 0.4m, 0 ope  loss_run 0.45 | fallback -> loss_run | extract loss_run ok
+  Premises register 33 locations, TIV 379,615,30  sov 0.33 | fallback -> sov | extract sov ok
+  Schedule of values 45 locations, TIV 284,931,3  sov 0.41 | audit queued | fallback -> sov | extract sov ok
+  From: kim@fenwick.ie Submission for your revie  broker_email 0.38 | fallback -> broker_email | extract broker_email ok
+  Statement of exposures 12 locations, TIV 265m,  sov 0.34 | fallback -> sov | extract sov ok
+  ACORD 131 umbrella / excess section, prior car  acord 0.39 | fallback -> acord | extract acord ok
+  ACORD 131 umbrella / excess section, prior car  acord 0.41 | fallback -> acord | extract acord ok
+  Engineering inspection certificate, lifting eq  acord 0.32 | fallback -> other | review: other
+  Insured values by location 58 locations, TIV 1  acord 0.28 | fallback -> sov | extract sov ok
+  Sanctions screening and KYC confirmation for t  acord 0.30 | audit queued | fallback -> other | review: other
+  Loss report 10 years incurred 4,519,915, claim  loss_run 0.51 | fallback -> loss_run | extract loss_run ok
+  From: amy@redcliffe.uk Submission for your rev  broker_email 0.41 | fallback -> broker_email | extract broker_email ok
+  Statement of exposures, 20 locations, TIV £373  sov 0.38 | audit queued | fallback -> sov | review: no extractor accepted
+  Loss report 3 yr incurred 1.9m, largest single  loss_run 0.57 | fallback -> loss_run | extract loss_run ok
+  Five year loss summary 10 years incurred 1.3m,  loss_run 0.43 | audit queued | fallback -> loss_run | extract loss_run ok
+  Loss run 3 yr incurred 4.4m, claims 22          loss_run 0.65 | fallback -> loss_run | extract loss_run ok
+  Carrier loss summary 10 years incurred 5,422,6  loss_run 0.48 | fallback -> loss_run | extract loss_run ok
+  From: ola@northgate.uk Fwd: new submission. At  broker_email 0.39 | fallback -> broker_email | extract broker_email ok
+  From: raj@redcliffe.com Re: renewal pack attac  broker_email 0.39 | fallback -> broker_email | extract broker_email ok
+  From: ben@aldgate.ie Re: quote request. Please  broker_email 0.47 | fallback -> broker_email | extract broker_email ok
+  Five year loss summary five year incurred 5.8m  loss_run 0.50 | fallback -> loss_run | extract loss_run ok
+  ACORD 137 commercial auto section, premises in  acord 0.40 | fallback -> acord | extract acord ok
+  From: kim@wexcombe.ie Fwd: new submission. Pro  broker_email 0.31 | fallback -> broker_email | extract broker_email ok
+  Premium invoice and payment terms, due 30 days  acord 0.25 | fallback -> other | review: other
+  Insured values by location 25 locations, TIV 1  acord 0.26 | fallback -> sov | extract sov ok
+  Location schedule 24 locations, TIV 325874k, s  sov 0.27 | fallback -> sov | extract sov ok
+  Schedule of values 47 locations, TIV 296329k,   sov 0.38 | fallback -> sov | extract sov ok
+  ACORD 137 commercial auto section, additional   acord 0.41 | fallback -> acord | extract acord ok
+  Statement of exposures, 48 locations, building  sov 0.35 | audit queued | fallback -> sov | review: no extractor accepted
+  Five year loss summary five year incurred 0.8m  loss_run 0.51 | fallback -> loss_run | extract loss_run ok
+  Schedule of values 13 locations, TIV 127m, spr  sov 0.34 | fallback -> sov | extract sov ok
+  ACORD 126 general liability section, schedule   acord 0.44 | fallback -> acord | extract acord ok
+  Loss run 4 yr incurred 689k, valued as at 30 S  loss_run 0.71 | fallback -> loss_run | extract loss_run ok
+  Loss report five year incurred 4.1m, 0 open cl  loss_run 0.51 | fallback -> loss_run | extract loss_run ok
+  Five year loss summary 4 yr incurred 3.1m, val  loss_run 0.45 | fallback -> loss_run | extract loss_run ok
+  Claims experience five year incurred 2488k, 4   loss_run 0.40 | fallback -> loss_run | extract loss_run ok
+  Loss history five year incurred 5.1m, claims 1  loss_run 0.56 | audit queued | fallback -> loss_run | extract loss_run ok
+  ACORD 137 commercial auto section, prior carri  acord 0.39 | fallback -> acord | extract acord ok
+  Claims experience 6 year incurred 2.5m, 4 open  loss_run 0.33 | audit queued | fallback -> loss_run | extract loss_run ok
+  From: lee@harbourline.co.uk Re: quote request.  broker_email 0.54 | audit queued | fallback -> broker_email | extract broker_email ok
+  Loss run 4 yr: paid 0.7m, outstanding reserves  loss_run 0.71 | audit queued | fallback -> loss_run | review: no extractor accepted
+  From: ola@fenwick.uk Fwd: new submission. Upda  broker_email 0.33 | fallback -> broker_email | extract broker_email ok
+  Location schedule 31 locations, TIV 84,135,628  sov 0.27 | audit queued | fallback -> sov | extract sov ok
+  Insured values by location 19 locations, TIV 3  sov 0.28 | audit queued | fallback -> sov | extract sov ok
+  From: zoe@saltmarsh.uk Fwd: updated exposures.  broker_email 0.37 | fallback -> broker_email | extract broker_email ok
+  Schedule of values tiv summary sheet, loss his  sov 0.30 | fallback -> sov | sov schema failed, loss_run accepted
+  ACORD 137 commercial auto section, prior carri  acord 0.40 | audit queued | fallback -> acord | extract acord ok
+  Fire risk assessment, means of escape and alar  acord 0.31 | fallback -> other | review: other
+  From: ben@aldgate.uk Fwd: updated exposures. U  broker_email 0.41 | fallback -> broker_email | extract broker_email ok
+  Loss history five year incurred 1128k, largest  loss_run 0.56 | fallback -> loss_run | extract loss_run ok
+  Schedule of values tiv summary sheet, loss his  sov 0.29 | fallback -> sov | sov schema failed, loss_run accepted
+  Location schedule 52 locations, TIV 344,802,37  sov 0.28 | fallback -> sov | extract sov ok
+  ACORD 126 general liability section, named ins  acord 0.40 | fallback -> acord | extract acord ok
+  Premises register 48 locations, TIV 59,303,265  sov 0.30 | fallback -> sov | extract sov ok
+  ACORD 137 commercial auto section, premises in  acord 0.40 | fallback -> acord | extract acord ok
+  From: amy@fenwick.com Submission for your revi  broker_email 0.36 | fallback -> broker_email | extract broker_email ok
+  ACORD 140 property section, schedule of hazard  acord 0.40 | fallback -> acord | extract acord ok
+  Loss report 5 years: paid 0.1m, outstanding re  loss_run 0.49 | audit queued | fallback -> loss_run | review: no extractor accepted
+  Property schedule 34 locations, TIV 78148k, st  sov 0.28 | audit queued | fallback -> sov | extract sov ok
+  ACORD 131 umbrella / excess section, additiona  acord 0.38 | audit queued | fallback -> acord | extract acord ok
+  From: kim@fenwick.uk Submission for your revie  broker_email 0.42 | audit queued | fallback -> broker_email | extract broker_email ok
+  Statement of exposures 49 locations, TIV 79,78  sov 0.40 | fallback -> sov | extract sov ok
+  ACORD 125 commercial insurance application, sc  acord 0.44 | fallback -> acord | extract acord ok
+  From: ivy@wexcombe.uk Re: quote request. Pleas  broker_email 0.52 | fallback -> broker_email | extract broker_email ok
+  Loss history five year incurred 3.0m, claims 2  loss_run 0.57 | audit queued | fallback -> loss_run | extract loss_run ok
+  Claims experience five year incurred 5.8m, 4 o  loss_run 0.36 | fallback -> loss_run | extract loss_run ok
+  Schedule of values 6 locations, TIV 212m, year  sov 0.38 | fallback -> sov | extract sov ok
+  Loss history 5 years incurred 0.2m, claims 17   loss_run 0.55 | fallback -> loss_run | extract loss_run ok
+  From: noah@tamar.uk Submission for your review  acord 0.37 | fallback -> broker_email | extract broker_email ok
+  ACORD 137 commercial auto section, named insur  acord 0.35 | fallback -> acord | extract acord ok
+  Terms of business agreement between broker and  acord 0.29 | fallback -> other | review: other
+  From: lee@harbourline.ie Re: renewal pack atta  broker_email 0.45 | fallback -> broker_email | extract broker_email ok
+  ACORD 126 general liability section, prior car  acord 0.41 | fallback -> acord | extract acord ok
+  Binder agreement, delegated authority schedule  acord 0.30 | audit queued | fallback -> other | review: other
+  Loss report five year: paid 1,826,535, outstan  loss_run 0.53 | fallback -> loss_run | review: no extractor accepted
+  Schedule of values 31 locations, TIV 163m, occ  sov 0.35 | fallback -> sov | extract sov ok
+  From: ivy@ashby.com Re: subjectivities. Please  broker_email 0.34 | fallback -> broker_email | extract broker_email ok
+  Location schedule 15 locations, TIV 283,244,53  acord 0.28 | fallback -> sov | extract sov ok
+  ACORD 137 commercial auto section, applicant i  acord 0.41 | fallback -> acord | extract acord ok
+  ACORD 125 commercial insurance application, pr  acord 0.44 | fallback -> acord | extract acord ok
+  Loss run 5 years incurred 93,452, large losses  loss_run 0.61 | audit queued | fallback -> loss_run | extract loss_run ok
+  From: ben@larkspur.com Fwd: updated exposures.  broker_email 0.46 | fallback -> broker_email | extract broker_email ok
+  Insured values by location, 17 locations, buil  sov 0.27 | audit queued | fallback -> sov | review: no extractor accepted
+  ACORD 126 general liability section, schedule   acord 0.42 | audit queued | fallback -> acord | extract acord ok
+  From: ola@redcliffe.com Fwd: updated exposures  acord 0.33 | audit queued | fallback -> broker_email | extract broker_email ok
+  From: noah@aldgate.com Fwd: updated exposures.  broker_email 0.44 | audit queued | fallback -> broker_email | extract broker_email ok
+  Location schedule 2 locations, TIV 326m, BI 12  acord 0.26 | fallback -> sov | extract sov ok
+  From: amy@kestrel.uk Re: renewal pack attached  loss_run 0.59 | audit queued | fallback -> broker_email | extract broker_email ok
+  From: eve@tamar.com Re: quote request. Please   broker_email 0.52 | audit queued | fallback -> broker_email | extract broker_email ok
+  ACORD 130 workers compensation application, ap  acord 0.39 | audit queued | fallback -> acord | extract acord ok
+  Property schedule, 40 locations, total sum ins  sov 0.29 | audit queued | fallback -> sov | review: no extractor accepted
+  Loss history five year incurred 170,723, 3 ope  loss_run 0.59 | fallback -> loss_run | extract loss_run ok
+  Fire risk assessment, means of escape and alar  acord 0.31 | audit queued | fallback -> other | review: other
+  From: noah@fenwick.uk Re: quote request. Clien  broker_email 0.55 | fallback -> broker_email | extract broker_email ok
+  Binder agreement, delegated authority schedule  acord 0.31 | fallback -> other | review: other
+  Premises register 15 locations, TIV 396m, occu  sov 0.31 | audit queued | fallback -> sov | extract sov ok
+  Loss report 6 year incurred 3.2m, 4 open claim  loss_run 0.41 | fallback -> loss_run | extract loss_run ok
+  ACORD 140 property section, applicant informat  acord 0.38 | fallback -> acord | extract acord ok
+  auto-routed 0/140
+  ops reviewed 68: {'audit sample': 44, 'typed as other': 14, 'no extractor accepted': 10}
+
+== calibration: 44 audited decisions
+  temperature=0.50 threshold=0.6
+
+== training run
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 156.10it/s]
+train items 123, calibration items 13, eval items 13 (calibration_slice), skipped {}, device mps
+optimizer budget: 123 train item(s), effective batch up to 64 (micro_batch 8 x grad_accum 8), 8 optimizer updates over 4 epoch(s)
+epoch 1/4 mean loss 1.4300
+epoch 2/4 mean loss 1.1074
+epoch 3/4 mean loss 0.9874
+epoch 4/4 mean loss 0.9608
+/Users/dan/host-code/doc-type-recognition-with-laya/src/doctype/adapters/laya_trainer.py:68: RuntimeWarning: laya.train: choice calibration: fitted on only 13 calibration items
+  report = finetune(str(train), self._base, str(out / "checkpoint"),
+
+=== Calibration Evidence (in-sample calibration slice, 13 items; not held-out) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               0.8462         1.0000         +0.1538       
+Loss                   1.3160         1.0811         -0.2349       
+ECE                    0.4573         0.3378         -0.1195       
+Brier (multi-class)    0.2763         0.1318         -0.1445       
+Brier (top-1)          0.3172         0.1197         -0.1975       
+Mean Confidence        0.3888         0.6622         +0.2734       
+-----------------------------------------------------------------
+
+  laya finetune: train_items=123 skipped={} temperature=[1.0453013181686401, 1.0, 1.0]
+  manifest var/runs/20261025-202953/fcci/snapshots/a520d758-ca62-459c-a80b-a709cc9ac23f/manifest.json
+  examples 136 by source {'LLM_FALLBACK': 79, 'HUMAN': 55, 'DOWNSTREAM': 2}
+  excluded golden=1 template=1 conflict=0 below_floor=0
+  eval on golden-v1 (10 examples)
+    current   convaiinnovations/laya/typed-decisions
+      acc=0.90 ece=0.491 coverage@0.60=0.10 auto_error=0.00
+      recall: sov=0.67 loss_run=1.00 acord=1.00 broker_email=1.00 other=1.00
+    candidate candidate-v2
+      acc=1.00 ece=0.323 coverage@0.60=0.90 auto_error=0.00
+      recall: sov=1.00 loss_run=1.00 acord=1.00 broker_email=1.00 other=1.00
+  promoted: True
+
+== week2: candidate-v2, threshold 0.60
+  Statement of exposures 8 premises, 8 locations  sov 0.63 | auto | extract sov ok
+  Insured values schedule, 12 locations, TIV 61m  sov 0.62 | audit queued | auto | extract sov ok
+  Loss history 6 yr incurred 1.4m, two large cla  loss_run 0.71 | auto | extract loss_run ok
+  Five year loss summary incurred 220k            loss_run 0.56 | fallback -> loss_run | extract loss_run ok
+  ACORD 140 property section, additional premise  acord 0.68 | auto | extract acord ok
+  From: sam@broker.com Re: marine cargo renewal   broker_email 0.80 | auto | extract broker_email ok
+  From: ana@mga.com Dear team, updated exposures  broker_email 0.76 | audit queued | auto | extract broker_email ok
+  Valuation report for warehouse, photos and flo  other 0.63 | audit queued | auto | review: other
+  auto-routed 7/8
+  ops reviewed 4: {'audit sample': 3, 'typed as other': 1}
+
+run artefacts in var/runs/20261025-202953
+trace var/runs/20261025-202953/trace.json
