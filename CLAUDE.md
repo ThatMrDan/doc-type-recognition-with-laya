@@ -21,6 +21,7 @@ uv run pytest                            # must stay green
 uv run doctype demo                      # offline end-to-end run, writes var/runs/<ts>/ incl. trace.json
 uv run doctype --model laya probe "..."  # raw Laya answer
 uv run doctype --model laya --fallback ollama demo
+uv run python scripts/generate_production.py   # regenerate synthetic week1 rows (keeps hand-written ones)
 ```
 
 Python is pinned to 3.12 (`.python-version`) because torch wheels lag new Python releases. The
@@ -67,6 +68,7 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 | Ops reviewer | Simulated from `truth` in `data/production/*.jsonl` |
 | Storage | Local JSONL and file manifests; production target is per-tenant Iceberg tables and S3 manifests |
 | Golden set | 10 examples, illustrative only; real eval needs a few hundred per class |
+| Production samples | week1 140 rows (20 hand-written + 120 synthetic from `scripts/generate_production.py`, seeded, ~15% hard cases); week2 8 rows |
 
 ## Suggested next work
 

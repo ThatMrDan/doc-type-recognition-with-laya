@@ -18,3 +18,123 @@
 {"text": "Insured values by premises, 5 locations, TIV 14m", "template_group": "lockton-sov", "truth": "sov"}
 {"text": "Five yr incurred 650k loss run", "template_group": "aon-loss", "truth": "loss_run"}
 {"text": "From: kim@broker.com Re: updated exposures attached", "template_group": "broker-kim", "truth": "broker_email"}
+{"text": "ACORD 137 commercial auto section, applicant information, insured Ostrander Plastics", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Claims experience 10 years incurred 3,309,478, claims 38", "template_group": "tamar-loss", "truth": "loss_run", "source": "generated"}
+{"text": "ACORD 125 commercial insurance application, additional premises, insured Tillery Marine", "template_group": "acord-125", "truth": "acord", "source": "generated"}
+{"text": "Carrier loss summary five year incurred 2119k, largest single loss 0.7m", "template_group": "wexcombe-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Statement of exposures, 58 locations, buildings and contents declared 258,628,427. Occupancy food processing, masonry non-combustible.", "template_group": "blackfriars-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Claims experience 10 years incurred 3349k, valued as at 30 Sept 2026", "template_group": "fenwick-loss", "truth": "loss_run", "source": "generated"}
+{"text": "ACORD 130 workers compensation application, schedule of hazards, insured Brindle Foods Ltd", "template_group": "acord-130", "truth": "acord", "source": "generated"}
+{"text": "Location schedule, 54 locations, buildings and contents declared 21,457,307. Occupancy hotel, timber frame.", "template_group": "tamar-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Property schedule 56 locations, TIV 354,596,642, year built 1995, sprinklered", "template_group": "northgate-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, prior carrier information, insured Rowan Data Centres", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Engineering inspection certificate, lifting equipment, Brindle Foods Ltd", "template_group": "engineer", "truth": "other", "source": "generated"}
+{"text": "Site plan and aerial photography, building footprint, Tillery Marine", "template_group": "plans", "truth": "other", "source": "generated"}
+{"text": "Loss report 5 years incurred 1.6m, 3 open claims", "template_group": "larkspur-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Valuation report for warehouse, reinstatement cost and floor plan, Tillery Marine", "template_group": "valuer-b", "truth": "other", "source": "generated"}
+{"text": "ACORD 140 property section, prior carrier information, insured Merrow Hotels plc", "template_group": "acord-140", "truth": "acord", "source": "generated"}
+{"text": "ACORD 125 commercial insurance application, additional premises, insured Pellow Cold Store", "template_group": "acord-125", "truth": "acord", "source": "generated"}
+{"text": "Schedule of values, 49 locations, TIV \u00a3343m. Occupancy data centre, concrete frame.", "template_group": "fenwick-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Insured values by location 17 locations, TIV 50.1m, sprinklered, BI 12 months indemnity", "template_group": "kestrel-sov", "truth": "sov", "source": "generated"}
+{"text": "Market presentation, client overview and placement strategy, Ebury Student Living", "template_group": "tamar-presentation", "truth": "other", "source": "generated"}
+{"text": "ACORD 126 general liability section, prior carrier information, insured Wickham Retail Group", "template_group": "acord-126", "truth": "acord", "source": "generated"}
+{"text": "Sanctions screening and KYC confirmation for the insured, Pellow Cold Store", "template_group": "kyc", "truth": "other", "source": "generated"}
+{"text": "Statement of exposures 10 locations, TIV 313808k, steel frame, year built 1993", "template_group": "kestrel-sov", "truth": "sov", "source": "generated"}
+{"text": "Carrier loss summary 3 yr incurred 0.4m, 0 open claims", "template_group": "harbourline-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Premises register 33 locations, TIV 379,615,301, year built 1973, BI 12 months indemnity", "template_group": "fenwick-sov", "truth": "sov", "source": "generated"}
+{"text": "Schedule of values 45 locations, TIV 284,931,306, BI 12 months indemnity, occupancy retail units", "template_group": "saltmarsh-sov", "truth": "sov", "source": "generated"}
+{"text": "From: kim@fenwick.ie Submission for your review. Property renewal, terms by friday please, kind regards", "template_group": "broker-kim", "truth": "broker_email", "source": "generated"}
+{"text": "Statement of exposures 12 locations, TIV 265m, sprinklered, frame construction", "template_group": "larkspur-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 131 umbrella / excess section, prior carrier information, insured Pellow Cold Store", "template_group": "acord-131", "truth": "acord", "source": "generated"}
+{"text": "ACORD 131 umbrella / excess section, prior carrier information, insured Copperleaf Logistics", "template_group": "acord-131", "truth": "acord", "source": "generated"}
+{"text": "Engineering inspection certificate, lifting equipment, Copperleaf Logistics", "template_group": "engineer", "truth": "other", "source": "generated"}
+{"text": "Insured values by location 58 locations, TIV 183m, frame construction, sprinklered", "template_group": "ashby-sov", "truth": "sov", "source": "generated"}
+{"text": "Sanctions screening and KYC confirmation for the insured, Ostrander Plastics", "template_group": "kyc", "truth": "other", "source": "generated"}
+{"text": "Loss report 10 years incurred 4,519,915, claims 18", "template_group": "kestrel-loss", "truth": "loss_run", "source": "generated"}
+{"text": "From: amy@redcliffe.uk Submission for your review. Updated information attached as requested, thanks", "template_group": "broker-amy", "truth": "broker_email", "source": "generated"}
+{"text": "Statement of exposures, 20 locations, TIV \u00a3373m. Occupancy cold storage, timber frame.", "template_group": "blackfriars-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Loss report 3 yr incurred 1.9m, largest single loss 781,959", "template_group": "harbourline-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Five year loss summary 10 years incurred 1.3m, valued as at 30 Sept 2026", "template_group": "harbourline-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Loss run 3 yr incurred 4.4m, claims 22", "template_group": "blackfriars-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Carrier loss summary 10 years incurred 5,422,615, claims 4", "template_group": "blackfriars-loss", "truth": "loss_run", "source": "generated"}
+{"text": "From: ola@northgate.uk Fwd: new submission. Attaching the full submission, best", "template_group": "broker-ola", "truth": "broker_email", "source": "generated"}
+{"text": "From: raj@redcliffe.com Re: renewal pack attached. Dear underwriter, schedule of values to follow, TIV circa 40m, please indicate. Kind regards, Raj", "template_group": "broker-raj", "truth": "broker_email", "source": "generated", "hard": true}
+{"text": "From: ben@aldgate.ie Re: quote request. Please see attached pack, regards", "template_group": "broker-ben", "truth": "broker_email", "source": "generated"}
+{"text": "Five year loss summary five year incurred 5.8m, largest single loss 48k", "template_group": "blackfriars-loss", "truth": "loss_run", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, premises information, insured Brindle Foods Ltd", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "From: kim@wexcombe.ie Fwd: new submission. Property damage and bi renewal, terms by friday please, best", "template_group": "broker-kim", "truth": "broker_email", "source": "generated"}
+{"text": "Premium invoice and payment terms, due 30 days, Vance & Hart Ltd", "template_group": "invoice", "truth": "other", "source": "generated"}
+{"text": "Insured values by location 25 locations, TIV 144,925,339, masonry non-combustible, year built 1972", "template_group": "blackfriars-sov", "truth": "sov", "source": "generated"}
+{"text": "Location schedule 24 locations, TIV 325874k, sprinklered, flood zone 2 at 1 site", "template_group": "northgate-sov", "truth": "sov", "source": "generated"}
+{"text": "Schedule of values 47 locations, TIV 296329k, occupancy data centre, year built 1996", "template_group": "larkspur-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, additional premises, insured Merrow Hotels plc", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Statement of exposures, 48 locations, buildings and contents declared 156,906,302. Occupancy offices, steel frame.", "template_group": "larkspur-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Five year loss summary five year incurred 0.8m, largest single loss 0.9m", "template_group": "blackfriars-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Schedule of values 13 locations, TIV 127m, sprinklered, occupancy student accommodation", "template_group": "northgate-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 126 general liability section, schedule of hazards, insured Wickham Retail Group", "template_group": "acord-126", "truth": "acord", "source": "generated"}
+{"text": "Loss run 4 yr incurred 689k, valued as at 30 Sept 2026", "template_group": "ashby-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Loss report five year incurred 4.1m, 0 open claims", "template_group": "kestrel-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Five year loss summary 4 yr incurred 3.1m, valued as at 30 Sept 2026", "template_group": "wexcombe-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Claims experience five year incurred 2488k, 4 open claims", "template_group": "ashby-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Loss history five year incurred 5.1m, claims 18", "template_group": "saltmarsh-loss", "truth": "loss_run", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, prior carrier information, insured Rowan Data Centres", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Claims experience 6 year incurred 2.5m, 4 open claims", "template_group": "harbourline-loss", "truth": "loss_run", "source": "generated"}
+{"text": "From: lee@harbourline.co.uk Re: quote request. Marine cargo renewal, terms by friday please, thanks", "template_group": "broker-lee", "truth": "broker_email", "source": "generated"}
+{"text": "Loss run 4 yr: paid 0.7m, outstanding reserves 0.9m, 1 claims, 1 open", "template_group": "tamar-loss", "truth": "loss_run", "source": "generated", "hard": true}
+{"text": "From: ola@fenwick.uk Fwd: new submission. Updated information attached as requested, regards", "template_group": "broker-ola", "truth": "broker_email", "source": "generated"}
+{"text": "Location schedule 31 locations, TIV 84,135,628, BI 12 months indemnity, flood zone 2 at 1 site", "template_group": "kestrel-sov", "truth": "sov", "source": "generated"}
+{"text": "Insured values by location 19 locations, TIV 376m, flood zone 2 at 1 site, sprinklered", "template_group": "larkspur-sov", "truth": "sov", "source": "generated"}
+{"text": "From: zoe@saltmarsh.uk Fwd: updated exposures. Please see attached pack, best", "template_group": "broker-zoe", "truth": "broker_email", "source": "generated"}
+{"text": "Schedule of values tiv summary sheet, loss history 3 yr incurred 836,173", "template_group": "northgate-mixed", "truth": "loss_run", "source": "generated", "hard": true}
+{"text": "ACORD 137 commercial auto section, prior carrier information, insured Pellow Cold Store", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Fire risk assessment, means of escape and alarm testing, Copperleaf Logistics", "template_group": "fra", "truth": "other", "source": "generated"}
+{"text": "From: ben@aldgate.uk Fwd: updated exposures. Updated information attached as requested, thanks", "template_group": "broker-ben", "truth": "broker_email", "source": "generated"}
+{"text": "Loss history five year incurred 1128k, largest single loss 869,619", "template_group": "fenwick-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Schedule of values tiv summary sheet, loss history 5 years incurred 708,043", "template_group": "ashby-mixed", "truth": "loss_run", "source": "generated", "hard": true}
+{"text": "Location schedule 52 locations, TIV 344,802,376, flood zone 2 at 1 site, year built 1983", "template_group": "larkspur-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 126 general liability section, named insured and mailing address, insured Wickham Retail Group", "template_group": "acord-126", "truth": "acord", "source": "generated"}
+{"text": "Premises register 48 locations, TIV 59,303,265, sprinklered, frame construction", "template_group": "larkspur-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, premises information, insured Merrow Hotels plc", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "From: amy@fenwick.com Submission for your review. Dear underwriter, schedule of values to follow, TIV circa 40m, please indicate. Kind regards, Amy", "template_group": "broker-amy", "truth": "broker_email", "source": "generated", "hard": true}
+{"text": "ACORD 140 property section, schedule of hazards, insured Copperleaf Logistics", "template_group": "acord-140", "truth": "acord", "source": "generated"}
+{"text": "Loss report 5 years: paid 0.1m, outstanding reserves 590,150, 27 claims, 2 open", "template_group": "fenwick-loss", "truth": "loss_run", "source": "generated", "hard": true}
+{"text": "Property schedule 34 locations, TIV 78148k, steel frame, year built 1975", "template_group": "saltmarsh-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 131 umbrella / excess section, additional premises, insured Rowan Data Centres", "template_group": "acord-131", "truth": "acord", "source": "generated"}
+{"text": "From: kim@fenwick.uk Submission for your review. Updated information attached as requested, best", "template_group": "broker-kim", "truth": "broker_email", "source": "generated"}
+{"text": "Statement of exposures 49 locations, TIV 79,787,689, steel frame, flood zone 2 at 1 site", "template_group": "kestrel-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 125 commercial insurance application, schedule of hazards, insured Merrow Hotels plc", "template_group": "acord-125", "truth": "acord", "source": "generated"}
+{"text": "From: ivy@wexcombe.uk Re: quote request. Please see attached pack, best", "template_group": "broker-ivy", "truth": "broker_email", "source": "generated"}
+{"text": "Loss history five year incurred 3.0m, claims 23", "template_group": "larkspur-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Claims experience five year incurred 5.8m, 4 open claims", "template_group": "aldgate-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Schedule of values 6 locations, TIV 212m, year built 1999, BI 12 months indemnity", "template_group": "harbourline-sov", "truth": "sov", "source": "generated"}
+{"text": "Loss history 5 years incurred 0.2m, claims 17", "template_group": "harbourline-loss", "truth": "loss_run", "source": "generated"}
+{"text": "From: noah@tamar.uk Submission for your review. Dear underwriter, please find the ACORD 140 and SOV attached. Kind regards, Noah", "template_group": "broker-noah", "truth": "broker_email", "source": "generated", "hard": true}
+{"text": "ACORD 137 commercial auto section, named insured and mailing address, insured Rowan Data Centres", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "Terms of business agreement between broker and insurer, Rowan Data Centres", "template_group": "tob", "truth": "other", "source": "generated"}
+{"text": "From: lee@harbourline.ie Re: renewal pack attached. Client keen to bind by month end, best", "template_group": "broker-lee", "truth": "broker_email", "source": "generated"}
+{"text": "ACORD 126 general liability section, prior carrier information, insured Ebury Student Living", "template_group": "acord-126", "truth": "acord", "source": "generated"}
+{"text": "Binder agreement, delegated authority schedule and limits, Pellow Cold Store", "template_group": "binder", "truth": "other", "source": "generated"}
+{"text": "Loss report five year: paid 1,826,535, outstanding reserves 1.0m, 12 claims, 1 open", "template_group": "ashby-loss", "truth": "loss_run", "source": "generated", "hard": true}
+{"text": "Schedule of values 31 locations, TIV 163m, occupancy hotel, timber frame", "template_group": "tamar-sov", "truth": "sov", "source": "generated"}
+{"text": "From: ivy@ashby.com Re: subjectivities. Please see attached pack, thanks", "template_group": "broker-ivy", "truth": "broker_email", "source": "generated"}
+{"text": "Location schedule 15 locations, TIV 283,244,539, occupancy logistics hub, sprinklered", "template_group": "northgate-sov", "truth": "sov", "source": "generated"}
+{"text": "ACORD 137 commercial auto section, applicant information, insured Ostrander Plastics", "template_group": "acord-137", "truth": "acord", "source": "generated"}
+{"text": "ACORD 125 commercial insurance application, premises information, insured Copperleaf Logistics", "template_group": "acord-125", "truth": "acord", "source": "generated"}
+{"text": "Loss run 5 years incurred 93,452, large losses listed", "template_group": "northgate-loss", "truth": "loss_run", "source": "generated"}
+{"text": "From: ben@larkspur.com Fwd: updated exposures. Attaching the full submission, kind regards", "template_group": "broker-ben", "truth": "broker_email", "source": "generated"}
+{"text": "Insured values by location, 17 locations, buildings and contents declared 14.5m. Occupancy data centre, steel frame.", "template_group": "larkspur-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "ACORD 126 general liability section, schedule of hazards, insured Quarry Lane Estates", "template_group": "acord-126", "truth": "acord", "source": "generated"}
+{"text": "From: ola@redcliffe.com Fwd: updated exposures. Dear underwriter, please find the ACORD 140 and SOV attached. Kind regards, Ola", "template_group": "broker-ola", "truth": "broker_email", "source": "generated", "hard": true}
+{"text": "From: noah@aldgate.com Fwd: updated exposures. Attaching the full submission, kind regards", "template_group": "broker-noah", "truth": "broker_email", "source": "generated"}
+{"text": "Location schedule 2 locations, TIV 326m, BI 12 months indemnity, sprinklered", "template_group": "fenwick-sov", "truth": "sov", "source": "generated"}
+{"text": "From: amy@kestrel.uk Re: renewal pack attached. Dear underwriter, loss runs for five years attached, incurred figures to follow. Kind regards, Amy", "template_group": "broker-amy", "truth": "broker_email", "source": "generated", "hard": true}
+{"text": "From: eve@tamar.com Re: quote request. Please see attached pack, thanks", "template_group": "broker-eve", "truth": "broker_email", "source": "generated"}
+{"text": "ACORD 130 workers compensation application, applicant information, insured Ostrander Plastics", "template_group": "acord-130", "truth": "acord", "source": "generated"}
+{"text": "Property schedule, 40 locations, total sum insured 381892k. Occupancy warehousing, concrete frame.", "template_group": "wexcombe-sov", "truth": "sov", "source": "generated", "hard": true}
+{"text": "Loss history five year incurred 170,723, 3 open claims", "template_group": "larkspur-loss", "truth": "loss_run", "source": "generated"}
+{"text": "Fire risk assessment, means of escape and alarm testing, Pellow Cold Store", "template_group": "fra", "truth": "other", "source": "generated"}
+{"text": "From: noah@fenwick.uk Re: quote request. Client keen to bind by month end, best", "template_group": "broker-noah", "truth": "broker_email", "source": "generated"}
+{"text": "Binder agreement, delegated authority schedule and limits, Copperleaf Logistics", "template_group": "binder", "truth": "other", "source": "generated"}
+{"text": "Premises register 15 locations, TIV 396m, occupancy offices, masonry non-combustible", "template_group": "tamar-sov", "truth": "sov", "source": "generated"}
+{"text": "Loss report 6 year incurred 3.2m, 4 open claims", "template_group": "redcliffe-loss", "truth": "loss_run", "source": "generated"}
+{"text": "ACORD 140 property section, applicant information, insured Ebury Student Living", "template_group": "acord-140", "truth": "acord", "source": "generated"}

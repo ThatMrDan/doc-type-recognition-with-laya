@@ -6,6 +6,84 @@ How a run moves through the code, which component does what, and how each step s
 Observed figures come from a real run on 25 October 2026: Laya `typed-decisions`, fallback
 `ollama:qwen3.8:27b-mlx`, export trainer, 28 production documents (`var/runs/20261025-200303`).
 
+## Summary
+
+Broker submissions arrive as a pile of documents. Before anything can be extracted, each one has to
+be typed: schedule of values, loss run, ACORD form, broker email, or something else. Laya, a small
+fast decision model, scores every document against the five types in one pass. If it is confident
+enough, its answer is used directly; if not, an LLM types the document instead. A typed extractor
+then pulls the fields out, and its accept or reject doubles as a check on the type.
+
+Every step leaves a record. Laya's answers go to the decision log; every opinion about a document's
+true type (the LLM's, an extractor's, a human reviewer's) goes to the label store with a trust tier.
+Those labels become training snapshots that teach Laya the tenant's documents, so over time more
+documents clear the gate and fewer need the LLM. A frozen golden set marks the exam every new model
+must pass before it replaces the old one, and a random audit sample keeps the confidence gate honest.
+
+## Glossary
+
+### Inputs
+
+| Term | What it is | Why it exists |
+|---|---|---|
+| Document | The text Laya sees: the first page, the sheet headers or the email body, with a tenant and a template group | Classifying a short, consistent cut keeps Laya fast and inside its context window |
+| Document type | One of `sov`, `loss_run`, `acord`, `broker_email`, `other`, each with a description in `CRITERIA` (`domain.py`) | Laya scores the descriptions, so their wording matters; `other` is the safe answer that always goes to a person |
+| Tenant | The customer a document belongs to (`fcci` in the demo) | Decisions, labels and snapshots are kept per tenant so one customer's data never trains another's model |
+| Template group | A key for the broker or form a document came from, such as `harbourline-sov` or `acord-125` | Documents from the same template look alike; grouping them stops near-duplicates of golden documents leaking into training |
+| Document hash | SHA-256 of the normalised text | Spots exact duplicates and golden documents, whatever their id |
+| Production samples | `data/production/week1.jsonl` and `week2.jsonl`, each row with `text`, `template_group` and the true type in `truth` | Stand-ins for live traffic; `truth` drives the simulated ops reviewer. Week 1 has 20 hand-written rows and 120 from `scripts/generate_production.py` |
+
+### Deciding and routing
+
+| Term | What it is | Why it exists |
+|---|---|---|
+| Laya (decision model) | An open-weight, non-autoregressive model that returns a probability for each type in one forward pass | Cheap and fast enough to run on every document; the LLM is the expensive exception |
+| Confidence | Laya's highest probability for a document (`answer_confidence`) | The single number the gate compares with the threshold |
+| Gate and threshold | The rule "auto if confidence is at least the threshold" (0.85 until calibration changes it) | Trades speed and cost (auto) against safety (fallback) |
+| Decision | One logged Laya call: probabilities, model version, threshold, route, audit flag, in `decisions.jsonl` | Written before routing, so every call is on record even if later steps fail; the source of training rows |
+| Route | `auto` (use Laya's type) or `fallback` (ask the LLM) | Records which path a document took, for metrics and audit |
+| Fallback classifier | An LLM (Ollama `qwen3.8:27b-mlx` locally, Bedrock in production) that types low-confidence documents | Keeps quality up while Laya is unsure, and its answers become training labels |
+| Extractor | A typed schema extractor; it accepts a document only if the required fields are present | Gets the data out, and a rejection is evidence the type was wrong |
+| Extraction router | Runs the extractor for the chosen type, then the others if it rejects | Recovers the real type when the cover title misleads (a DOWNSTREAM label) |
+| Review queue | Decisions waiting for a person: audit samples, documents typed `other`, documents no extractor accepted | Puts humans only where the system is unsure or needs measuring |
+| Ops reviewer | The person who works the review queue; simulated in the demo from `truth` | Produces HUMAN labels, the most trusted kind |
+| Audit sample | A random 25% of decisions on either route sent for human review whatever happened | An unbiased measure of how accurate Laya really is at each confidence; calibration fits only on it |
+
+### Labels
+
+| Term | What it is | Why it exists |
+|---|---|---|
+| Label | A claim about a decision's true type, with source, actor, time and note, in `labels.jsonl` | The raw material for training; one decision can collect several |
+| Label source (trust tier) | `HUMAN` > `DOWNSTREAM` > `LLM_FALLBACK` | Not all evidence is equal; a person outranks an extractor, which outranks an LLM |
+| Resolution | Picking one label per decision: highest tier wins, latest within a tier; disagreement below HUMAN gives no label | Conflicting machine labels go to review instead of teaching the model a guess |
+| Soft target | How a label becomes a training row: weight 1.0, 0.7 or 0.4 on the label, the rest spread over the other four types | Laya's training format has no per-row weight, so trust is encoded in the target itself |
+
+### Training, evaluation and release
+
+| Term | What it is | Why it exists |
+|---|---|---|
+| Golden set | A frozen, versioned set of labelled documents (`golden-v1`, 10 examples) | The exam: never trained on, never used to fit calibration, so model comparisons stay fair |
+| Snapshot | A versioned set of training examples with a manifest, built from resolved labels | Reproducible training data; records how many rows were excluded and why |
+| Exclusions | Rows a snapshot drops: golden hashes, golden template groups, duplicates, conflicts, labels below the minimum source | Keeps the exam out of the textbook and conflicting labels out of training |
+| Trainer | `ExportTrainer` (writes `train.jsonl` only), `LayaTrainer` (real fine-tune), `SimulatedTrainer` (offline stand-in) | Separates producing training data from running an expensive fine-tune |
+| Candidate | The model a fine-tune produces | It has to pass the promotion gate before it serves traffic |
+| Promotion policy | Accuracy no lower, no class recall drop over 0.05, ECE rise no more than 0.02 | A new model must be at least as good, per class, before it replaces the current one |
+| Model registry | Records every candidate with its eval report and snapshot, and which version is current | Rollback and lineage: which data made which model |
+| Calibration | Fitting a temperature and a threshold on the audit sample, once there are at least 30 audited decisions | Laya's raw confidences do not match its accuracy; calibration makes the gate mean what it says |
+| Temperature | A scale applied to Laya's probabilities: below 1 sharpens them, above 1 flattens them | Fixes over- or under-confidence without changing which type ranks first |
+| ECE | Expected calibration error: the average gap between confidence and accuracy | Measures whether confidence can be trusted at all |
+| Coverage | The share of documents that clear the threshold | How much traffic avoids the LLM |
+| Auto error | The error rate among documents that cleared the threshold | The cost of that coverage; threshold tuning keeps it under 5% |
+
+### Observability
+
+| Term | What it is | Why it exists |
+|---|---|---|
+| Run directory | `var/runs/<timestamp>/` holding the decision log, labels, snapshots, `eval.json` and `trace.json` | Everything one run did, in one place |
+| Trace | `trace.json`: one OpenTelemetry trace per run, a tree of spans in time order | Shows the sequence of steps, what each used and decided, and how long it took |
+| Span | One timed step in the trace, such as `gate` or `fallback.classify`, with attributes and events | The unit you read when following a document or finding where time went |
+| Simulated adapters | Offline stand-ins for Laya, the LLM and the trainer | Let the whole loop run and be tested with no model downloads |
+
 ## 1. Components
 
 ![Components: CLI calls services, services call ports only, adapters implement ports and reach Laya, Ollama, Bedrock and local disk](diagrams/components.svg)

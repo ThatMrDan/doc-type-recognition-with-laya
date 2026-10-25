@@ -83,6 +83,10 @@ Defaults are in `.env.example`; copy it to `.env` to change them.
 Global flags: `--model simulated|laya`, `--fallback simulated|ollama|bedrock`,
 `--trainer simulated|export|laya`, `--threshold`.
 
+Week 1 has 20 hand-written documents plus 120 synthetic ones from
+`scripts/generate_production.py` (seeded; about one in six is a deliberate hard case for the
+extractors or the classifiers). Re-run it with `--n` or `--week` to change the batch.
+
 Each demo run writes `decisions.jsonl`, `labels.jsonl`, the snapshot
 `manifest.json`, `eval.json` and `trace.json` under `var/runs/<timestamp>/`.
 
