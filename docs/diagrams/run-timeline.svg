@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 640" width="1120" height="640" role="img" aria-label="Timeline of one real demo run: 31.6 s, of which the LLM fallback takes most; calibration and training take under half a second.">
+<title>Timeline of one real demo run: 31.6 s, of which the LLM fallback takes most; calibration and training take under half a second.</title>
+<defs><marker id="acf4f2f-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#cf4f2f"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20" y="32" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">One demo run, 31.6 s  (Laya typed-decisions, fallback qwen3.8:27b-mlx, 28 documents)</text>
+<line x1="170.0" y1="52" x2="170.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="170.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">0s</text>
+<line x1="285.0" y1="52" x2="285.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="285.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">4s</text>
+<line x1="400.0" y1="52" x2="400.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="400.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">8s</text>
+<line x1="515.0" y1="52" x2="515.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="515.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">12s</text>
+<line x1="630.0" y1="52" x2="630.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="630.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">16s</text>
+<line x1="745.0" y1="52" x2="745.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="745.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">20s</text>
+<line x1="860.0" y1="52" x2="860.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="860.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">24s</text>
+<line x1="975.0" y1="52" x2="975.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="975.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">28s</text>
+<line x1="1090.0" y1="52" x2="1090.0" y2="330" stroke="#e3e7ec" stroke-width="1"/>
+<text x="1090.0" y="346" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">32s</text>
+<text x="20" y="81" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="600" fill="#1b2430" text-anchor="start" xml:space="preserve">demo</text>
+<rect x="170.0" y="64" width="908.8923224999999" height="24" rx="4" fill="#eef1f5" stroke="#8e99a8" stroke-width="1.3"/>
+<text x="20" y="121" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="600" fill="#1b2430" text-anchor="start" xml:space="preserve">week</text>
+<rect x="170.009315" y="104" width="727.5364887499999" height="24" rx="4" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="533.7775593749999" y="121" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="middle" xml:space="preserve">week1: 20 documents</text>
+<rect x="911.3813675" y="104" width="167.26410750000002" height="24" rx="4" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="995.01342125" y="121" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="middle" xml:space="preserve">week2: 8 documents</text>
+<text x="20" y="164" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="600" fill="#1b2430" text-anchor="start" xml:space="preserve">intake.document</text>
+<text x="20" y="181" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">one block each</text>
+<rect x="170.0099475" y="150" width="317.29549375" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="170.0099475" y="150" width="9.882927499999994" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="179.90612875" y="150" width="307.37645625" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="487.313405" y="150" width="80.15100374999997" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="487.313405" y="150" width="32.87007625000001" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="520.20510125" y="150" width="47.254621250000014" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="567.46601875" y="150" width="45.79949750000003" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="567.46601875" y="150" width="2.695111249999968" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="570.17605125" y="150" width="43.08443375000002" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="613.2672412500001" y="150" width="16.544331249999914" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="613.2672412500001" y="150" width="2.548917500000016" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="615.83131" y="150" width="13.975173749999954" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="629.81332625" y="150" width="16.181017499999825" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="629.81332625" y="150" width="1.5740049999999428" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="631.40423625" y="150" width="14.582057499999905" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="645.9989725" y="150" width="15.89780124999993" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="645.9989725" y="150" width="1.2646837499999037" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="647.28654125" y="150" width="14.607529999999997" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="661.897665" y="150" width="16.12412125000003" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="661.897665" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="662.94037" y="150" width="15.0745737499999" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="678.023655" y="150" width="16.86253624999995" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="678.023655" y="150" width="1.6099424999999883" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="679.65332" y="150" width="15.21806499999991" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="694.8887787499999" y="150" width="18.00716" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="694.8887787499999" y="150" width="1.5870862499999703" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="696.4915625" y="150" width="16.3971600000001" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="712.8978075" y="150" width="17.985022500000014" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="712.8978075" y="150" width="1.53217374999997" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="714.44642625" y="150" width="16.428871250000043" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="730.88602125" y="150" width="17.100356250000004" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="730.88602125" y="150" width="1.5364287500000273" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="732.4436675000001" y="150" width="15.537879999999973" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="747.9884762500001" y="150" width="14.610979999999927" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="747.9884762500001" y="150" width="1.266954999999939" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="749.27653375" y="150" width="13.31360749999999" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="762.6035387500001" y="150" width="14.184991249999939" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="762.6035387500001" y="150" width="1.3214649999999892" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="763.9402125" y="150" width="12.842826249999916" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="776.7912325000001" y="150" width="15.270964999999933" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="776.7912325000001" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="777.96972375" y="150" width="14.081980000000044" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="792.0655325" y="150" width="17.793777500000033" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="792.0655325" y="150" width="1.4099862499999745" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="793.490555" y="150" width="16.365535000000023" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="809.86043125" y="150" width="15.546965" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="809.86043125" y="150" width="1.3388874999999416" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="811.2364925" y="150" width="14.16868999999997" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="825.40820125" y="150" width="17.85771749999992" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="825.40820125" y="150" width="1.370311249999986" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="826.7900412500001" y="150" width="16.47110500000008" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="843.269685" y="150" width="16.730171250000012" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="843.269685" y="150" width="1.4546349999999393" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="844.74249" y="150" width="15.251530000000002" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="860.0017825" y="150" width="16.43646124999998" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="860.0017825" y="150" width="1.2723600000000488" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="861.2913637500001" y="150" width="15.144810000000007" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="876.53461375" y="150" width="17.29726500000004" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="876.53461375" y="150" width="2.0467987499999936" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="878.59282625" y="150" width="15.236493750000022" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="911.38214375" y="150" width="17.85199625000007" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="911.38214375" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="912.29639375" y="150" width="16.934756249999964" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="929.23497375" y="150" width="16.708033750000027" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="929.23497375" y="150" width="1.2217025000001058" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="930.47041875" y="150" width="15.46626374999994" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="945.94493375" y="150" width="38.10533625000005" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="945.94493375" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="947.02018375" y="150" width="37.025457500000016" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="984.0519662500001" y="150" width="20.678954999999974" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="984.0519662500001" y="150" width="2.2307987499999626" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="986.29780125" y="150" width="18.431049999999914" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1004.7316687499999" y="150" width="16.99467125000001" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="1004.7316687499999" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1005.86280875" y="150" width="15.861288749999972" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1021.72711625" y="150" width="16.668761250000102" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="1021.72711625" y="150" width="1.9672762500000545" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1023.71356875" y="150" width="14.680008749999956" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1038.3965962500001" y="150" width="22.378396249999923" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="1038.3965962500001" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1039.48501375" y="150" width="21.286844999999857" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1060.7758549999999" y="150" width="17.845297500000015" height="56" rx="0" fill="#eef1f5" stroke="#ffffff" stroke-width="1"/>
+<rect x="1060.7758549999999" y="150" width="1.2" height="56" rx="0" fill="#3f78c0" stroke="#ffffff" stroke-width="0.6"/>
+<rect x="1061.86228875" y="150" width="16.755126250000103" height="56" rx="0" fill="#cf4f2f" stroke="#ffffff" stroke-width="0.6"/>
+<text x="174.0" y="228" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#cf4f2f" text-anchor="start" xml:space="preserve">first fallback call 10.7 s: model loads into memory</text>
+<line x1="230.0" y1="216" x2="230.0" y2="209" stroke="#cf4f2f" stroke-width="1.2" marker-end="url(#acf4f2f-9)"/>
+<text x="20" y="253" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1b2430" text-anchor="start" xml:space="preserve">between weeks</text>
+<rect x="892.99264875" y="236" width="19.388718750000066" height="24" rx="2" fill="#ffffff" stroke="#1b2430" stroke-width="1.2"/>
+<path d="M892.99264875,260 L170,380" fill="none" stroke="#9aa5b4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<path d="M912.3813675,260 L1090,380" fill="none" stroke="#9aa5b4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<rect x="170" y="380" width="920" height="228" rx="6" fill="#fbfcfd" stroke="#9aa5b4" stroke-width="1"/>
+<text x="182" y="402" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1b2430" text-anchor="start" xml:space="preserve">zoom: 25.18 s to 25.79 s  (605 ms)</text>
+<text x="162" y="431" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">ops.review</text>
+<rect x="190.0" y="416" width="11.152316785846182" height="20" rx="3" fill="#fbeeee" stroke="#b8473f" stroke-width="1.3"/>
+<text x="207.15231678584618" y="430" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">8 ms</text>
+<text x="162" y="461" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">calibration</text>
+<rect x="371.5332368867016" y="446" width="5.3193568387541745" height="20" rx="3" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="382.8525937254558" y="460" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">4 ms</text>
+<text x="162" y="491" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">training.run</text>
+<rect x="376.92097714214964" y="476" width="690.8034555449885" height="20" rx="3" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="722.322704914644" y="490" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="middle" xml:space="preserve">475 ms</text>
+<text x="162" y="521" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">  snapshot.build</text>
+<rect x="376.9573512999651" y="506" width="44.86388624808774" height="20" rx="3" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="427.82123754805286" y="520" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">31 ms</text>
+<text x="162" y="551" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">  eval.current</text>
+<rect x="421.89253089736974" y="536" width="642.2614144587272" height="20" rx="3" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="743.0232381267333" y="550" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="middle" xml:space="preserve">441 ms</text>
+<text x="162" y="581" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#1b2430" text-anchor="end" xml:space="preserve">  trainer.fine_tune</text>
+<rect x="1064.2339685032825" y="566" width="3.4526350597261626" height="20" rx="3" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="1058.2339685032825" y="580" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="end" xml:space="preserve">2 ms</text>
+<rect x="20" y="614" width="12" height="12" rx="2" fill="#3f78c0" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="38" y="625" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">model.predict (Laya): 2.8 s</text>
+<rect x="270" y="614" width="12" height="12" rx="2" fill="#cf4f2f" stroke="#cf4f2f" stroke-width="1.3"/>
+<text x="288" y="625" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">fallback.classify (Ollama): 28.1 s, 89% of the run</text>
+<rect x="640" y="614" width="12" height="12" rx="2" fill="#eef1f5" stroke="#9aa5b4" stroke-width="1.3"/>
+<text x="658" y="625" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">gate, extract, review: under 20 ms in total</text>
+</svg>

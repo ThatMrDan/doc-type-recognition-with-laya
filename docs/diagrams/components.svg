@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1310 700" width="1310" height="700" role="img" aria-label="Components: the CLI calls services, services call ports only, adapters implement ports and talk to Laya, Ollama, Bedrock and local disk; the container chooses adapters.">
+<title>Components: the CLI calls services, services call ports only, adapters implement ports and talk to Laya, Ollama, Bedrock and local disk; the container chooses adapters.</title>
+<defs><marker id="a1b2430-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2430"/></marker><marker id="a3e8e5a-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3e8e5a"/></marker><marker id="a3f78c0-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3f78c0"/></marker><marker id="a6f7a89-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f7a89"/></marker><marker id="ac98a14-9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c98a14"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20" y="40" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">Entry</text>
+<text x="230" y="40" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">Services</text>
+<text x="530" y="40" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">Ports  (ports.py)</text>
+<text x="780" y="40" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">Adapters</text>
+<text x="1100" y="40" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1b2430" text-anchor="start" xml:space="preserve">Outside the process</text>
+<text x="230" y="56" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">depend only on ports</text>
+<rect x="530" y="70" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="97.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">DecisionModel</text>
+<rect x="780" y="70" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="89.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">LayaModel</text>
+<text x="792" y="106.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">SimulatedLaya</text>
+<line x1="780" y1="93.0" x2="733" y2="93.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="130" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="157.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">FallbackClassifier</text>
+<rect x="780" y="130" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="149.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">OllamaFallback</text>
+<text x="792" y="166.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">BedrockFallback, SimulatedFallback</text>
+<line x1="780" y1="153.0" x2="733" y2="153.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="190" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="217.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Extractor</text>
+<rect x="780" y="190" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="209.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">SchemaExtractor x4</text>
+<text x="792" y="226.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">sov, loss_run, acord, broker_email</text>
+<line x1="780" y1="213.0" x2="733" y2="213.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="250" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="269.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">DecisionLog</text>
+<text x="542" y="286.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">LabelRepository</text>
+<rect x="780" y="250" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="269.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">JsonlDecisionLog</text>
+<text x="792" y="286.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">JsonlLabelRepository</text>
+<line x1="780" y1="273.0" x2="733" y2="273.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="310" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="329.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">TextStore</text>
+<text x="542" y="346.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">SnapshotStore</text>
+<rect x="780" y="310" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="329.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">InMemoryTextStore</text>
+<text x="792" y="346.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">FileSnapshotStore</text>
+<line x1="780" y1="333.0" x2="733" y2="333.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="370" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="397.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">GoldenSetRegistry</text>
+<rect x="780" y="370" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="389.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">StaticGoldenSet</text>
+<text x="792" y="406.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">golden-v1.jsonl</text>
+<line x1="780" y1="393.0" x2="733" y2="393.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="430" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="449.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Trainer</text>
+<text x="542" y="466.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">ModelRegistry</text>
+<rect x="780" y="430" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="449.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">ExportTrainer, LayaTrainer</text>
+<text x="792" y="466.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">SimulatedTrainer, ModelRegistry</text>
+<line x1="780" y1="453.0" x2="733" y2="453.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="490" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="517.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">ReviewQueue</text>
+<rect x="780" y="490" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="517.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">InMemoryReviewQueue</text>
+<line x1="780" y1="513.0" x2="733" y2="513.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<rect x="530" y="550" width="200" height="46" rx="8" fill="#fff4df" stroke="#c98a14" stroke-width="1.3"/>
+<text x="542" y="577.5" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Tracer</text>
+<rect x="780" y="550" width="270" height="46" rx="8" fill="#e6f4ea" stroke="#3e8e5a" stroke-width="1.3"/>
+<text x="792" y="569.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">OtelTracer</text>
+<text x="792" y="586.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">NullTracer</text>
+<line x1="780" y1="573.0" x2="733" y2="573.0" stroke="#c98a14" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ac98a14-9)"/>
+<text x="756" y="64" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#c98a14" text-anchor="middle" xml:space="preserve">implements</text>
+<rect x="1100" y="70" width="190" height="46" rx="8" fill="#f1ecfa" stroke="#7a5bb8" stroke-width="1.3"/>
+<text x="1112" y="89.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Hugging Face</text>
+<text x="1112" y="106.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">convaiinnovations/laya</text>
+<rect x="1100" y="130" width="190" height="46" rx="8" fill="#f1ecfa" stroke="#7a5bb8" stroke-width="1.3"/>
+<text x="1112" y="149.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Ollama</text>
+<text x="1112" y="166.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">localhost:11434</text>
+<rect x="1100" y="190" width="190" height="46" rx="8" fill="#f1ecfa" stroke="#7a5bb8" stroke-width="1.3"/>
+<text x="1112" y="209.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">AWS Bedrock</text>
+<text x="1112" y="226.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">Converse API</text>
+<rect x="1100" y="250" width="190" height="346" rx="8" fill="#f1ecfa" stroke="#7a5bb8" stroke-width="1.3"/>
+<text x="1112" y="272" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">Local disk</text>
+<text x="1112" y="294" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">var/runs/&lt;ts&gt;/</text>
+<text x="1112" y="312" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  decisions.jsonl</text>
+<text x="1112" y="330" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  labels.jsonl</text>
+<text x="1112" y="348" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  fcci/snapshots/.../</text>
+<text x="1112" y="366" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">    manifest.json</text>
+<text x="1112" y="384" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  eval.json</text>
+<text x="1112" y="402" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  trace.json</text>
+<text x="1112" y="420" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">data/golden, data/production</text>
+<text x="1112" y="438" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">models/&lt;version&gt;/</text>
+<text x="1112" y="456" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">  train.jsonl</text>
+<line x1="1050" y1="93" x2="1097" y2="93" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="86" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">load</text>
+<line x1="1050" y1="147" x2="1097" y2="147" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="140" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">POST</text>
+<path d="M1050,161 C1075,161 1072,213 1097,213" fill="none" stroke="#6f7a89" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a6f7a89-9)"/>
+<line x1="1050" y1="273" x2="1097" y2="273" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="266" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">append</text>
+<line x1="1050" y1="333" x2="1097" y2="333" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="326" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">write</text>
+<line x1="1050" y1="393" x2="1097" y2="393" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="386" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">read</text>
+<line x1="1050" y1="453" x2="1097" y2="453" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="446" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">export</text>
+<line x1="1050" y1="573" x2="1097" y2="573" stroke="#6f7a89" stroke-width="1.5" marker-end="url(#a6f7a89-9)"/>
+<text x="1074" y="566" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">write</text>
+<rect x="230" y="70" width="250" height="156" rx="8" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="242" y="96.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">IntakeService</text>
+<text x="242" y="113.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">+ ExtractionRouter</text>
+<text x="242" y="129.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">predict, gate, fallback,</text>
+<text x="242" y="145.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">extract, label, review</text>
+<text x="242" y="161.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve"></text>
+<text x="242" y="177.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">ports: DecisionModel, Fallback,</text>
+<text x="242" y="193.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">Extractor, TextStore,</text>
+<text x="242" y="209.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">ReviewQueue, Tracer</text>
+<rect x="230" y="270" width="250" height="100" rx="8" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="242" y="292.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">LabelStoreService</text>
+<text x="242" y="309.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">decision log, audit sample,</text>
+<text x="242" y="325.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">labels with trust, snapshots</text>
+<text x="242" y="341.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">ports: DecisionLog, LabelRepository,</text>
+<text x="242" y="357.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">SnapshotStore, GoldenSetRegistry</text>
+<rect x="230" y="404" width="250" height="76" rx="8" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="242" y="430.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">TrainingPipeline</text>
+<text x="242" y="447.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">snapshot, eval, fine-tune,</text>
+<text x="242" y="463.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">eval, promote</text>
+<rect x="230" y="524" width="250" height="52" rx="8" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="242" y="546.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">EvalService</text>
+<text x="242" y="563.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">+ PromotionPolicy, golden set</text>
+<rect x="230" y="600" width="250" height="52" rx="8" fill="#e7f0fb" stroke="#3f78c0" stroke-width="1.3"/>
+<text x="242" y="622.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">calibration</text>
+<text x="242" y="639.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">fit T and threshold on audits</text>
+<line x1="355.0" y1="226" x2="355.0" y2="267" stroke="#3f78c0" stroke-width="1.5" marker-end="url(#a3f78c0-9)"/>
+<text x="365.0" y="251" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#3f78c0" text-anchor="start" xml:space="preserve">records decisions, labels</text>
+<line x1="355.0" y1="404" x2="355.0" y2="373" stroke="#3f78c0" stroke-width="1.5" marker-end="url(#a3f78c0-9)"/>
+<text x="365.0" y="392" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#3f78c0" text-anchor="start" xml:space="preserve">build_snapshot</text>
+<line x1="355.0" y1="480" x2="355.0" y2="521" stroke="#3f78c0" stroke-width="1.5" marker-end="url(#a3f78c0-9)"/>
+<text x="365.0" y="505" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#3f78c0" text-anchor="start" xml:space="preserve">evaluate</text>
+<path d="M480,148 L505,148" fill="none" stroke="#3f78c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a3f78c0-9)"/>
+<path d="M480,315 L505,315" fill="none" stroke="#3f78c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a3f78c0-9)"/>
+<path d="M480,442 L505,442" fill="none" stroke="#3f78c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a3f78c0-9)"/>
+<path d="M480,550 L505,550" fill="none" stroke="#3f78c0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a3f78c0-9)"/>
+<path d="M507,70 L507,604" fill="none" stroke="#c98a14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="507" y="616" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">services call</text>
+<text x="507" y="630" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#5b6675" text-anchor="middle" xml:space="preserve">through ports only</text>
+<rect x="20" y="70" width="150" height="120" rx="8" fill="#eef1f5" stroke="#8e99a8" stroke-width="1.3"/>
+<text x="32" y="102.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">cli.py</text>
+<text x="32" y="119.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">demo, eval</text>
+<text x="32" y="135.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">classify, probe</text>
+<text x="32" y="151.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">plays ops reviewer</text>
+<text x="32" y="167.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">runs calibration</text>
+<rect x="20" y="300" width="150" height="92" rx="8" fill="#eef1f5" stroke="#8e99a8" stroke-width="1.3"/>
+<text x="32" y="326.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="650" fill="#1b2430" text-anchor="start" xml:space="preserve">container.py</text>
+<text x="32" y="343.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">composition root:</text>
+<text x="32" y="359.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">the only place</text>
+<text x="32" y="375.5" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#5b6675" text-anchor="start" xml:space="preserve">adapters are chosen</text>
+<line x1="170" y1="110" x2="227" y2="110" stroke="#1b2430" stroke-width="1.5" marker-end="url(#a1b2430-9)"/>
+<text x="199" y="102" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="middle" xml:space="preserve">process()</text>
+<path d="M170,160 L200,160 L200,442 L227,442" fill="none" stroke="#1b2430" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a1b2430-9)"/>
+<text x="205" y="436" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">run()</text>
+<path d="M170,175 L188,175 L188,626 L227,626" fill="none" stroke="#1b2430" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a1b2430-9)"/>
+<text x="193" y="620" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">fit</text>
+<path d="M95,392 L95,684 L915,684 L915,599" fill="none" stroke="#3e8e5a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a3e8e5a-9)"/>
+<text x="505" y="678" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#3e8e5a" text-anchor="middle" xml:space="preserve" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">chooses one adapter per port from Settings (env, .env, CLI flags)</text>
+<line x1="95" y1="190" x2="95" y2="297" stroke="#1b2430" stroke-width="1.5" marker-end="url(#a1b2430-9)"/>
+<text x="103" y="248" font-family="-apple-system, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#1b2430" text-anchor="start" xml:space="preserve">build_app()</text>
+</svg>

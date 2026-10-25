@@ -33,6 +33,7 @@ machine has 3.15 system-wide; let uv manage the interpreter.
 - `services/` label store, intake, evaluation, training pipeline, calibration
 - `adapters/` real and simulated implementations of ports
 - `container.py` the only place adapters are chosen; `cli.py` thin
+- `docs/flows.md` maps the flows, sequences and trace spans; diagrams in `docs/diagrams/*.svg`
 - Services trace their steps through the `Tracer` port; only `adapters/tracing.py` imports OpenTelemetry
 - Optional dependencies (laya, boto3, opentelemetry) are imported lazily inside adapters so the core runs without them
 

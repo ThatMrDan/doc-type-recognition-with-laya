@@ -96,6 +96,9 @@ a trace too. Set `DOCTYPE_TRACE=off` to turn tracing off, or run without the `tr
 
 ## Layout
 
+For how a run flows through these files, with diagrams of the components, the per-document
+sequence and the training run, see [docs/flows.md](docs/flows.md).
+
 ```
 src/doctype/
   domain.py            types, CRITERIA, no I/O
