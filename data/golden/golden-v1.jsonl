@@ -1,0 +1,10 @@
+{"text": "Statement of values: 14 locations, total TIV 82.4m, frame construction", "template_group": "g-aon-sov", "doc_type": "sov"}
+{"text": "Property exposure 6 locations TIV 12m sprinklered", "template_group": "g-marsh-sov", "doc_type": "sov"}
+{"text": "Statement of exposures for 9 premises, insured values 30m", "template_group": "g-gb-sov", "doc_type": "sov"}
+{"text": "Five year loss summary, incurred 1.2m, open claims 3", "template_group": "g-aon-loss", "doc_type": "loss_run"}
+{"text": "Carrier loss history 3 yr incurred 410k", "template_group": "g-howden-loss", "doc_type": "loss_run"}
+{"text": "ACORD 125 commercial insurance application", "template_group": "g-acord-125", "doc_type": "acord"}
+{"text": "ACORD 140 property section", "template_group": "g-acord-140", "doc_type": "acord"}
+{"text": "From: j.smith@broker.co.uk Fwd: renewal submission, regards", "template_group": "g-email-a", "doc_type": "broker_email"}
+{"text": "From: ops@mga.com Re: quote request for marine cargo", "template_group": "g-email-b", "doc_type": "broker_email"}
+{"text": "Engineering survey report, boiler inspection photos", "template_group": "g-survey", "doc_type": "other"}

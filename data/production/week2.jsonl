@@ -1,0 +1,8 @@
+{"text": "Statement of exposures 8 premises, 8 locations, TIV 33m", "template_group": "ajg-sov", "truth": "sov"}
+{"text": "Insured values schedule, 12 locations, TIV 61m", "template_group": "bms-sov", "truth": "sov"}
+{"text": "Loss history 6 yr incurred 1.4m, two large claims", "template_group": "ajg-loss", "truth": "loss_run"}
+{"text": "Five year loss summary incurred 220k", "template_group": "bms-loss", "truth": "loss_run"}
+{"text": "ACORD 140 property section, additional premises", "template_group": "acord-140", "truth": "acord"}
+{"text": "From: sam@broker.com Re: marine cargo renewal attached, regards", "template_group": "broker-sam", "truth": "broker_email"}
+{"text": "From: ana@mga.com Dear team, updated exposures attached", "template_group": "broker-ana", "truth": "broker_email"}
+{"text": "Valuation report for warehouse, photos and floor plan", "template_group": "valuer-b", "truth": "other"}

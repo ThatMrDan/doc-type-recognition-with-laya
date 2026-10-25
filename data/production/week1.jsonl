@@ -1,0 +1,20 @@
+{"text": "Schedule of values 22 locations TIV 140m", "template_group": "aon-sov-2026", "truth": "sov"}
+{"text": "Schedule of values 3 locations TIV 4.5m", "template_group": "aon-sov-2026", "truth": "sov"}
+{"text": "Statement of exposures 11 premises, tiv 51m, 11 locations", "template_group": "willis-sov", "truth": "sov"}
+{"text": "Exposure summary 7 premises insured values 18m, 7 locations, TIV 18m", "template_group": "lockton-sov", "truth": "sov"}
+{"text": "Premises list and statement of exposures, 4 locations, TIV 9m", "template_group": "gb-broker-sov", "truth": "sov"}
+{"text": "Loss run 5 years incurred 2.1m claims 7", "template_group": "aon-loss", "truth": "loss_run"}
+{"text": "Loss history 4 yr incurred 300k", "template_group": "marsh-loss", "truth": "loss_run"}
+{"text": "Carrier loss summary 5 year incurred 880k, large losses listed", "template_group": "howden-loss", "truth": "loss_run"}
+{"text": "ACORD 125 application commercial", "template_group": "acord-125", "truth": "acord"}
+{"text": "ACORD 126 general liability section", "template_group": "acord-126", "truth": "acord"}
+{"text": "From: amy@broker.com Fwd: please find submission attached, regards", "template_group": "broker-amy", "truth": "broker_email"}
+{"text": "From: tom@mga.co.uk Re: renewal pack attached", "template_group": "broker-tom", "truth": "broker_email"}
+{"text": "From: lee@broker.com Dear underwriter, see attached pack", "template_group": "broker-lee", "truth": "broker_email"}
+{"text": "Statement of values: 14 locations, total TIV 82.4m, frame construction", "template_group": "g-aon-sov", "truth": "sov"}
+{"text": "Statement of values: 15 locations, total TIV 90m, frame construction", "template_group": "g-aon-sov", "truth": "sov"}
+{"text": "Survey report roof condition photos", "template_group": "surveyor-a", "truth": "other"}
+{"text": "Premises register and exposures, 6 locations, TIV 22m", "template_group": "willis-sov", "truth": "sov"}
+{"text": "Insured values by premises, 5 locations, TIV 14m", "template_group": "lockton-sov", "truth": "sov"}
+{"text": "Five yr incurred 650k loss run", "template_group": "aon-loss", "truth": "loss_run"}
+{"text": "From: kim@broker.com Re: updated exposures attached", "template_group": "broker-kim", "truth": "broker_email"}
